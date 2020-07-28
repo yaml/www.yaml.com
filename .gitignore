@@ -1,0 +1,9 @@
+.cache/
+/site/
+/stage.yaml.com/
+/note/
+/main/
+/master/
+/CLAUDE.md
+
+*.sw[op]

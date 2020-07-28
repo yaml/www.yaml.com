@@ -1,0 +1,7 @@
+mkdocs>=1.6.0
+mkdocs-material[imaging]>=9.5.0
+mkdocs-rss-plugin>=1.15.0
+mkdocs-redirects>=1.2.0
+mkdocs-minify-plugin>=0.8.0
+pillow>=10.0.0
+cairosvg>=2.7.0

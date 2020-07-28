@@ -1,0 +1,192 @@
+site_name: The YAML Company
+site_url: https://yaml.com
+site_description: YAML supports your stack; We support YAML
+site_author: Ingy döt Net
+
+# repo_url: https://github.com/yaml/www.yaml.com
+# repo_name: yaml/www.yaml.com
+# edit_uri: edit/master/docs/
+
+copyright: Copyright 2020-2026 Ingy döt Net / YAML LLC
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+
+  palette:
+  # Light mode
+  - scheme: default
+    primary: amber
+    accent: deep orange
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  # Dark mode
+  - scheme: slate
+    primary: amber
+    accent: deep orange
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+
+  font:
+    text: Newsreader
+    code: JetBrains Mono
+
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+
+  features:
+  - announce.dismiss
+  - content.action.edit
+  - header.autohide
+  - content.action.view
+  - content.code.copy
+  - content.tabs.link
+  - navigation.expand
+  - navigation.footer
+  - navigation.indexes
+  - navigation.instant
+  - navigation.instant.prefetch
+  - navigation.sections
+  - navigation.tabs
+  - navigation.top
+  - navigation.tracking
+  - search.highlight
+  - search.share
+  - search.suggest
+  - toc.follow
+
+plugins:
+- search:
+    separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+- blog:
+    blog_dir: blog
+    blog_toc: true
+    post_dir: "{blog}/posts"
+    post_date_format: long
+    post_url_format: "{slug}"
+    archive: true
+    archive_name: Archive
+    archive_date_format: MMMM yyyy
+    archive_url_format: archive/{date}
+    categories: true
+    categories_name: Categories
+    categories_url_format: category/{slug}
+    authors: true
+    authors_file: "{blog}/.authors.yml"
+- rss:
+    match_path: blog/posts/.*
+    date_from_meta:
+      as_creation: date
+    categories:
+      - categories
+      - tags
+- tags:
+    tags_file: tags.md
+- redirects:
+    redirect_maps:
+      doc/index.md: resources/index.md
+      doc/cheat.md: resources/cheatsheet.md
+      doc/glossary.md: resources/glossary.md
+      faq.md: resources/faq.md
+      blog/2020-12/in-the-beginning/index.md: blog/posts/2020-12-in-the-beginning.md
+      blog/2021-10/new-yaml-spec/index.md: blog/posts/2021-10-new-yaml-spec.md
+- minify:
+    minify_html: true
+    minify_js: true
+    minify_css: true
+    htmlmin_opts:
+      remove_comments: true
+
+markdown_extensions:
+# Python Markdown
+- abbr
+- admonition
+- attr_list
+- def_list
+- footnotes
+- md_in_html
+- tables
+- toc:
+    permalink: true
+    permalink_title: Anchor link to this section
+
+# Python Markdown Extensions
+- pymdownx.arithmatex:
+    generic: true
+- pymdownx.betterem:
+    smart_enable: all
+- pymdownx.caret
+- pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.smartsymbols
+- pymdownx.snippets:
+    auto_append:
+    - includes/abbreviations.md
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+
+extra_css:
+- assets/stylesheets/extra.css
+
+extra_javascript:
+- assets/javascripts/extra.js
+
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/yaml
+    name: YAML on GitHub
+  - icon: fontawesome/solid/paper-plane
+    link: mailto:info@yaml.com
+    name: Contact Us
+
+  generator: false
+
+nav:
+- YES Program:
+  - yes/index.md
+  - YES Member: yes/member.md
+  - YES Partner: yes/partner.md
+  - YES Leader: yes/leader.md
+  - Compare Benefits: yes/benefits.md
+  - Contact Us: yes/contact.md
+- Projects:
+  - projects/index.md
+  - go-yaml: projects/go-yaml.md
+  - pyyaml: projects/pyyaml.md
+  - libyaml: projects/libyaml.md
+  - yq: projects/yq.md
+  - serde-yaml: projects/serde-yaml.md
+  - YAMLScript: projects/yamlscript.md
+- Services: services/index.md
+# - Resources:
+#   - resources/index.md
+#   - FAQ: resources/faq.md
+#   - Cheatsheet: resources/cheatsheet.md
+#   - Glossary: resources/glossary.md
+# - Blog:
+#   - blog/index.md
+- About:
+  - about/index.md
+  - Team: about/team.md
+  - Contact: about/contact.md
