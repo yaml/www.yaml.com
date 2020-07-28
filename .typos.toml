@@ -1,0 +1,3 @@
+[default.extend-words]
+# Company names and proper nouns
+Hashi = "Hashi"
