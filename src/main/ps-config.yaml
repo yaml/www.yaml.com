@@ -1,0 +1,13 @@
+sidebar:
+- title: About
+  pages:
+  - title: What is YAML?
+  - title: Why use YAML?
+  - title: Who uses YAML?
+- title: YAML Projects
+  slug: project
+  pages:
+  - title: YAML Frameworks
+  - title: YAML Test Suite
+  - title: YAML Test Matrix
+  - title: YAML Reference Parser
