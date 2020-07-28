@@ -1,0 +1,46 @@
+project-site: 0.0.1
+
+title: YAML
+description: YAML Ain't Markup Language
+
+build:
+  builder: bootstrap45
+  port: 1234
+
+code:
+  repo: https://github.com/yaml/www.yaml.com
+  branch: master
+
+page:
+  layout: default
+  toc: true
+
+theme:
+  color: 44449a
+  logo:
+    include: logo.svg
+    letters: Y
+
+social:
+  github: https://github.com/yaml/www.yaml.com
+  twitter: https://twitter.com/yamlnews
+  slack: https://yamlio.slack.com
+
+navbar:
+  left:
+  - type: logo
+  - name: Blog
+    link : /blog
+  - name: Docs
+    link : /doc
+  - name: Spec
+    link : /spec
+
+  right:
+  - type: github
+  - type: twitter
+
+copyright:
+  who: Ingy döt Net
+  when: 2020
+  license: MIT
