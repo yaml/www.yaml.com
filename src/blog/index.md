@@ -1,8 +1,3 @@
 ---
-title: YAML Blog
+redirect_to: /blog/2020-12/in-the-beginning/
 ---
-This new yaml.com website was launched on Dec 11, 2020.
-
-The first blog post should be here in the next day or two.
-
-Stay tuned!

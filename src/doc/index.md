@@ -2,4 +2,4 @@
 title: YAML Documentation
 ---
 
-YAML documentation is in the way!
+YAML documentation is on the way!
