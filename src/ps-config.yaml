@@ -5,7 +5,6 @@ description: YAML Ain't Markup Language
 
 build:
   builder: bootstrap45
-  port: 1234
 
 code:
   repo: https://github.com/yaml/www.yaml.com
