@@ -5,6 +5,7 @@ description: YAML Ain't Markup Language
 
 build:
   builder: bootstrap45
+  publish: gh-pages
 
 code:
   repo: https://github.com/yaml/www.yaml.com
@@ -36,6 +37,10 @@ navbar:
   right:
   - type: github
   - type: twitter
+
+sidebar:
+- title: FAQ
+- title: Resources
 
 copyright:
   who: Ingy döt Net

@@ -1,5 +1,6 @@
 ---
 title: Welcome to the YAML Data Project
+redirect_from: /home/
 ---
 YAML is a human friendly language for the communication of data between people and computers.
 
