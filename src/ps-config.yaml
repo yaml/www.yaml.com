@@ -32,8 +32,6 @@ navbar:
     link : /blog
   - name: Docs
     link : /doc
-  - name: Spec
-    link : /spec
 
   right:
   - type: github
