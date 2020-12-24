@@ -10,9 +10,9 @@
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="4.5">
 
-<title>YAML Resources · YAML</title>
+<title>Contributing to yaml.com · YAML</title>
 
-<link rel="canonical" href="/resources/">
+<link rel="canonical" href="/about/contributing/">
 
 <!-- Bootstrap core CSS -->
 <link href="/dist/css/bootstrap.css" rel="stylesheet">
@@ -36,13 +36,13 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@https://twitter.com/yamlnews">
 <meta name="twitter:creator" content="@https://twitter.com/yamlnews">
-<meta name="twitter:title" content="YAML Resources">
+<meta name="twitter:title" content="Contributing to yaml.com">
 <meta name="twitter:description" content="YAML Ain’t Markup Language">
 <meta name="twitter:image" content="/assets/brand/bootstrap-social-logo.png">
 
 <!-- Facebook -->
-<meta property="og:url" content="/resources/">
-<meta property="og:title" content="YAML Resources">
+<meta property="og:url" content="/about/contributing/">
+<meta property="og:title" content="Contributing to yaml.com">
 <meta property="og:description" content="YAML Ain’t Markup Language">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/assets/brand/bootstrap-social.png">
@@ -173,17 +173,17 @@
 
 
       <ul class="nav bd-sidenav"></ul>
-    </div><div class="bd-toc-item active">
+    </div><div class="bd-toc-item">
       <a class="bd-toc-link" href="/resources/">Resources</a>
 
 
       <ul class="nav bd-sidenav"></ul>
-    </div><div class="bd-toc-item">
+    </div><div class="bd-toc-item active">
       <a class="bd-toc-link" href="/about/contributing/">About</a>
 
 
       <ul class="nav bd-sidenav">
-          <li class="">
+          <li class="active bd-sidenav-active">
             <a class="bd-toc-link" href="/about/contributing/">&nbsp;&nbsp;Contributing</a>
 
           </li></ul>
@@ -195,10 +195,6 @@
         
           <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
             <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#yaml-web-sites">YAML Web Sites</a></li>
-<li class="toc-entry toc-h2"><a href="#yaml-community">YAML Community</a></li>
-<li class="toc-entry toc-h2"><a href="#yaml-development-resources">YAML Development Resources</a></li>
-<li class="toc-entry toc-h2"><a href="#yaml-frameworks-in-various-languages">YAML Frameworks in Various Languages</a></li>
 </ul>
           </nav>
         
@@ -212,7 +208,7 @@
 
             
               <a class="btn btn-sm btn-bd-light my-2 my-md-0"
-                href="https://github.com/yaml/www.yaml.com/blob/master/src/resources.md"
+                href="https://github.com/yaml/www.yaml.com/blob/master/src/about/contributing.md"
                 title="View and edit this file on GitHub"
                 target="_blank"
                 rel="noopener"
@@ -223,51 +219,29 @@
                 </svg>
               </a>
             
-            <h1 class="bd-title" id="content">YAML Resources</h1>
+            <h1 class="bd-title" id="content">Contributing to yaml.com</h1>
           </div>
           <p class="bd-lead"></p>
           <hr/>
-          <h2 id="yaml-web-sites">YAML Web Sites</h2>
+          <p>This yaml.com website is built using the <a href="https://project-site.org">ProjectSite</a> static site builder framework.
+The site is hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+All of the content and configuration information is in this <a href="https://github.com/yaml/www.yaml.com">Git repository</a>.</p>
 
-<ul>
-  <li><a href="https://yaml.com/">Official YAML Website &amp; Blog</a></li>
-  <li><a href="https://yaml.io/">Active YAML Development</a></li>
-  <li><a href="https://www.yaml.info/">Learn the YAML Language</a></li>
-  <li><a href="https://yaml.org/">The Original YAML Website</a></li>
-  <li><a href="https://twitter.com/yamlnews/">Twitter News about YAML</a></li>
-  <li><a href="https://github.com/yaml/">YAML’s GitHub Organization</a></li>
-</ul>
+<p>There are 3 ways to easily contribute to the website.
+Note that all of them require you to be a logged-in GitHub user.
+If you don’t have an account, signing up is painless.</p>
 
-<h2 id="yaml-community">YAML Community</h2>
+<ol>
+  <li>If you see a typo or grammar mistake, just click the edit button (little pencil icon) on the top of each page.
+This will take you to that page’s source location on GitHub.
+Assuming you are a logged-in GitHub user, you should see another pencil icon to actually edit the page on GitHub.
+Click that link, make your changes and then click the “Propose changes” button at the bottom that page.
+Click the “Create pull request” and you are done!</li>
+  <li>If you want to make a more major change like adding a new page or fixing a bug, following these relatively easy <a href="https://project-site.org/doc/forking-a-projectsite/">instructions</a>.</li>
+  <li>If you just want to tell us what’s wrong, you can file a <a href="https://github.com/yaml/www.yaml.com/issues">new issue</a>.</li>
+</ol>
 
-<p>The YAML community hangs out on IRC (irc.freenode.net).
-There are a few different channels:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">#yaml</code> - Get help or discuss YAML ideas</li>
-  <li><code class="language-plaintext highlighter-rouge">#yaml-dev</code> - People working on YAML frameworks or YAML itself</li>
-  <li><code class="language-plaintext highlighter-rouge">#libyaml</code> - Discuss the YAML C library project</li>
-  <li><code class="language-plaintext highlighter-rouge">#pyyaml</code> - Python’s YAML channel</li>
-</ul>
-
-<blockquote>
-  <p>If you want to use IRC but don’t know how, just click -&gt; <a href="https://webchat.freenode.net/">freenode webchat</a>.
-All you have to do is enter a unique nickname and one of the channel names above, then click <strong>Start</strong>.</p>
-
-  <p><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">#</code> is important; ie use <code class="language-plaintext highlighter-rouge">#yaml</code>, not <code class="language-plaintext highlighter-rouge">yaml</code> for the channel name.</p>
-</blockquote>
-
-<h2 id="yaml-development-resources">YAML Development Resources</h2>
-
-<ul>
-  <li><a href="https://github.com/yaml/yaml-test-suite">The YAML Test Suite</a></li>
-  <li><a href="https://matrix.yaml.io">The YAML Test Matrix</a></li>
-  <li><a href="https://github.com/yaml/yaml-editor">The YAML Editor</a></li>
-</ul>
-
-<h2 id="yaml-frameworks-in-various-languages">YAML Frameworks in Various Languages</h2>
-
-<p>…</p>
+<p>We look forward to your ideas!</p>
 
         </main>
       </div>
