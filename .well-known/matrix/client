@@ -1,0 +1,25 @@
+{
+	"m.homeserver": {
+		"base_url": "https://matrix.yaml.com"
+	}
+,
+	"m.identity_server": {
+		"base_url": "https://matrix.yaml.com"
+	}
+,
+	"io.element.jitsi": {
+		"preferredDomain": "jitsi.yaml.com"
+	},
+	"im.vector.riot.jitsi": {
+		"preferredDomain": "jitsi.yaml.com"
+	}
+	,
+	"io.element.e2ee": {
+		"default": true,
+		"secure_backup_required": false,
+		"secure_backup_setup_methods": []
+	},
+	"im.vector.riot.e2ee": {
+		"default": true
+	}
+}
