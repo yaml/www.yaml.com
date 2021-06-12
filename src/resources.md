@@ -12,7 +12,7 @@ title: YAML Resources
 
 ## YAML Community
 
-The YAML community hangs out on IRC (irc.freenode.net).
+The YAML community hangs out on IRC (irc.libera.chat).
 There are a few different channels:
 
 * `#yaml` - Get help or discuss YAML ideas
@@ -20,7 +20,7 @@ There are a few different channels:
 * `#libyaml` - Discuss the YAML C library project
 * `#pyyaml` - Python's YAML channel
 
-> If you want to use IRC but don't know how, just click -> [freenode webchat](https://webchat.freenode.net/).
+> If you want to use IRC but don't know how, just click -> [libera web chat](https://web.libera.chat/).
 > All you have to do is enter a unique nickname and one of the channel names above, then click **Start**.
 >
 > **Note**: The `#` is important; ie use `#yaml`, not `yaml` for the channel name.
