@@ -19,7 +19,7 @@ This glossary identifies the YAML terms and gives their meanings.
 | Dump/Dumper | A dumper is the set of stack transformations that convert data from a program memory structure to YAML text.
 | Explicit key | The `?` explicit key indicator is used in block mappings to convey that the node that follows it is a mapping key. This is most commonly used for mapping keys that are collections.
 | Flow | The term *flow* is used to describe the YAML syntax form that uses `{}` and `[]` indicators for collection scoping. It is a proper superset of the JSON syntax. Flow nodes can appear inside of block nodes, but block nodes cannot appear inside of flow nodes.
-| Folded scalar | The folded syntax form is a block scalar indicated by `>` syntax and is followed by text lines that are indented past the current level. The text lines are joined together according to rather complex rules. The general rule is that 2 adjacent, non-blank lines are joined by a single space. Analagous to HTML text folding.
+| Folded scalar | The folded syntax form is a block scalar indicated by `>` syntax and is followed by text lines that are indented past the current level. The text lines are joined together according to rather complex rules. The general rule is that 2 adjacent, non-blank lines are joined by a single space. Analogous to HTML text folding.
 | Framework | A YAML implementation in a given programming language is called a framework.
 | Kind | YAML has 3 *kinds* of nodes: mapping, sequence and scalar.
 | Literal scalar | The *literal* block scalar form is used for multiline text. It begins with the `|` indicator. The text lines are indented past the current indentation level, but otherwise left as is. This is the best way to represent multiline plain text files in YAML.

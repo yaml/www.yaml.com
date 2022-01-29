@@ -28,6 +28,6 @@ Over the past decade, YAML has continuously grown in popularity, adoption and us
 YAML is commonly used as a configuration language, but it was designed to be a general purpose language for data.
 
 The purpose of the YAML Data Project is to provide information about the YAML language, and the projects that surround it.
-To continue being a vital part of the technology ecosystem, YAML needs to evolve to accomodate the needs of communities it serves.
+To continue being a vital part of the technology ecosystem, YAML needs to evolve to accommodate the needs of communities it serves.
 In 2020, there are renewed efforts to bring these changes to fruition.
 
