@@ -62,7 +62,7 @@ We’re not only working out the ways to specify the future YAML, we are
 building working [reference frameworks](
 https://github.com/yaml/yaml-reference-parser#readme) and tools in sync.
 We have [interactive browser demos](
-https://spec.yaml.io/main/play/parser) for these reference
+https://play.yaml.io/main/parser) for these reference
 implementations so everyone can try things out and point out any problems.
 
 Speaking of communication, we have a few social sites to mention:
