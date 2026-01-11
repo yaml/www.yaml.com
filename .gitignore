@@ -1,6 +1,6 @@
 .cache/
-/site/
-/stage.yaml.com/
+/main-site/
+/stage-site/
 /note/
 /main/
 /master/

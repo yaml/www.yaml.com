@@ -9,16 +9,18 @@ include $M/typos.mk
 include $M/clean.mk
 include $M/shell.mk
 
-STAGE-REPO ?= git@github.com:yaml/stage.yaml.com.git
+MAIN-REPO  ?= git@github.com:yaml/www.yaml.com
+STAGE-REPO ?= git@github.com:yaml/stage.yaml.com
 
 MAKES-CLEAN := \
-  site \
+  main-site \
+  stage-site \
 
 
 serve: $(PYTHON-VENV)
 	mkdocs $@
 
-stage: site
+stage: stage-site
 	cd $< && \
 	  git init && \
 	  git add -A && \
@@ -26,9 +28,20 @@ stage: site
 	  git push -f $(STAGE-REPO) HEAD:main
 	$(RM) -r $<
 
-site: lint $(PYTHON-VENV)
-	mkdocs build
+publish: main-site
+	cd $< && \
+	  git init && \
+	  git add -A && \
+	  git commit -m 'Deploy to production' && \
+	  git push -f $(MAIN-REPO) HEAD:gh-pages
+	$(RM) -r $<
+
+stage-site: lint $(PYTHON-VENV)
+	mkdocs build -d $@
 	echo 'stage.yaml.com' > $@/CNAME
+
+main-site: lint $(PYTHON-VENV)
+	mkdocs build -d $@
 
 lint: $(TYPOS)
 	typos
