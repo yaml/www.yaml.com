@@ -142,12 +142,6 @@ The YAML Company takes care of the entire YAML ecosystem—not just projects we 
 
 </div>
 
-**Other collaborations:**
-
-- **[rapidyaml](https://github.com/biojppm/rapidyaml)** - Fast C++ YAML library by Joao Paulo Magalhaes
-- **[libfyaml](https://github.com/pantoniou/libfyaml)** - Fully featured YAML 1.2 parser by Pantelis Antoniou
-- **[yaml.js](https://github.com/eemeli/yaml)** - JavaScript YAML parser by Eemeli Aro
-
 ---
 
 ## The YAML Specification

@@ -53,7 +53,10 @@ The YAML Company works closely with the YAML language development team, which ma
 We collaborate with maintainers of other critical YAML tools:
 
 - **Mike Farah** - [yq](https://github.com/mikefarah/yq)
+
+<!--
 - **Joao Paulo Magalhaes** - [rapidyaml](https://github.com/biojppm/rapidyaml)
+-->
 
 ---
 
