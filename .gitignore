@@ -1,6 +1,7 @@
 .cache/
 /main-site/
 /stage-site/
+/site/
 /note/
 /main/
 /master/

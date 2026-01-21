@@ -2,8 +2,14 @@
 title: Home
 description: YAML supports your stack; We support YAML
 hide:
-  - navigation
-  - toc
+- navigation
+- toc
+social:
+  cards_layout_options:
+    header: yaml.com
+    title: The YAML Company
+    subtitle: YAML Enterprise Support
+    footer: YAML supports your stack. We support YAML.
 ---
 
 <style>

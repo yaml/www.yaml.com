@@ -1,0 +1,102 @@
+size: { width: 1200, height: 630 }
+layers:
+  # Amber background
+  - background:
+      color: "#FFB300"
+
+  # Gradient overlay for depth
+  - background:
+      image: "{{ config.docs_dir }}/assets/images/social-gradient.png"
+
+  # Teal accent bar at bottom
+  - size: { width: 1200, height: 8 }
+    offset: { x: 0, y: 622 }
+    background:
+      color: "#0d7377"
+
+  # YAML logo (top-right)
+  - size: { width: 180, height: 180 }
+    offset: { x: 956, y: 48 }
+    background:
+      image: "{{ config.docs_dir }}/assets/images/logo.png"
+
+  # Site name (top-left)
+  - size: { width: 900, height: 60 }
+    offset: { x: 64, y: 64 }
+    typography:
+      content: >-
+        {{ page.meta.get("social", {}).get("cards_layout_options", {}).get("header", config.site_name) }}
+      align: start
+      color: "#5D4E00"
+      font:
+        family: JetBrains Mono
+        style: Bold
+
+  # Title (large)
+  - size: { width: 1072, height: 125 }
+    offset: { x: 64, y: 200 }
+    typography:
+      content: >-
+        {{ page.meta.get("social", {}).get("cards_layout_options", {}).get("title", page.title) }}
+      align: start
+      color: "#5D4E00"
+      line:
+        amount: 1
+        height: 1.0
+      font:
+        family: JetBrains Mono
+        style: Bold
+
+  # Subtitle (smaller)
+  - size: { width: 1072, height: 95 }
+    offset: { x: 64, y: 335 }
+    typography:
+      content: >-
+        {{ page.meta.get("social", {}).get("cards_layout_options", {}).get("subtitle", "") }}
+      align: start
+      color: "#5D4E00"
+      line:
+        amount: 1
+        height: 1.0
+      font:
+        family: JetBrains Mono
+        style: Regular
+
+  # Description (bottom)
+  - size: { width: 1072, height: 80 }
+    offset: { x: 64, y: 500 }
+    typography:
+      content: >-
+        {{ page.meta.get("social", {}).get("cards_layout_options", {}).get("footer", page.meta.get('description', config.site_description)) }}
+      align: start
+      color: "#5D4E00"
+      line:
+        amount: 2
+        height: 1.4
+      font:
+        family: Newsreader
+        style: Regular
+
+definitions:
+- &page_title_with_site_name >-
+    {%- if not page.is_homepage -%}
+    {{ page.meta.get("title", page.title) }} - {{ config.site_name }}
+    {%- else -%}
+    {{ page.meta.get("title", page.title) }}
+    {%- endif -%}
+
+- &page_description >-
+    {{ page.meta.get("description", config.site_description) }}
+
+tags:
+  og:type: website
+  og:title: *page_title_with_site_name
+  og:description: *page_description
+  og:image: "{{ image.url }}"
+  og:image:type: "{{ image.type }}"
+  og:image:width: "{{ image.width }}"
+  og:image:height: "{{ image.height }}"
+  twitter:card: summary_large_image
+  twitter:title: *page_title_with_site_name
+  twitter:description: *page_description
+  twitter:image: "{{ image.url }}"

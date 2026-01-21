@@ -13,6 +13,7 @@ MAIN-REPO  ?= git@github.com:yaml/www.yaml.com
 STAGE-REPO ?= git@github.com:yaml/stage.yaml.com
 
 MAKES-CLEAN := \
+  site \
   main-site \
   stage-site \
 
