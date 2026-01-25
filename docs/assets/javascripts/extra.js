@@ -34,4 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe for intersection
     observer.observe(el);
   });
+
+  // Open external links in new tab
+  document.querySelectorAll('a').forEach(link => {
+    // Skip links without href or with special protocols
+    if (!link.href || link.href.startsWith('mailto:') || link.href.startsWith('tel:') || link.href.startsWith('javascript:')) {
+      return;
+    }
+
+    try {
+      const linkUrl = new URL(link.href);
+      const currentUrl = new URL(window.location.href);
+
+      if (linkUrl.hostname !== currentUrl.hostname) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    } catch (e) {
+      // Invalid URL, skip
+    }
+  });
 });
