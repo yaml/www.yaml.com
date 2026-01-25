@@ -9,6 +9,7 @@ The YAML library for Go that powers Kubernetes and the cloud native ecosystem.
 **go-yaml** is the de facto standard YAML library for the Go programming language. It powers some of the most critical infrastructure in modern technology.
 
 - **Repository**: [github.com/yaml/go-yaml](https://github.com/yaml/go-yaml)
+- **Module**: go.yaml.in/yaml/v4
 - **Language**: Go
 - **License**: Apache-2.0 / MIT
 - **Maintainer**: The YAML Company

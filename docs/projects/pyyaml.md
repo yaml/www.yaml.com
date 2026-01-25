@@ -9,6 +9,7 @@ The canonical YAML library for Python, powering Ansible and the Python ecosystem
 **pyyaml** is the standard YAML library for Python. It's the foundation of Ansible, the world's most popular automation tool, and countless Python applications.
 
 - **Repository**: [github.com/yaml/pyyaml](https://github.com/yaml/pyyaml)
+- **Package**: [pypi.org/project/PyYAML](https://pypi.org/project/PyYAML/)
 - **Language**: Python (with C extension via libyaml)
 - **License**: MIT
 - **Maintainer**: The YAML Company

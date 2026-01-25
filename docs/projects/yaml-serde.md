@@ -9,6 +9,7 @@ YAML serialization for Rust's serde framework.
 **yaml-serde** is the standard YAML library for Rust applications. Built on the powerful serde serialization framework, it provides type-safe YAML processing for Rust's growing ecosystem.
 
 - **Repository**: [github.com/yaml/yaml-serde](https://github.com/yaml/yaml-serde)
+- **Package**: [crates.io/crates/yaml_serde](https://crates.io/crates/yaml_serde)
 - **Language**: Rust
 - **License**: MIT OR Apache-2.0
 - **Maintainer**: The YAML Company (fork of [dtolnay/serde-yaml](https://github.com/dtolnay/serde-yaml), now archived)
@@ -115,6 +116,6 @@ yaml-serde is maintained through the [YES Program](../yes/index.md). YES members
 ## Resources
 
 - [:octicons-mark-github-16: GitHub Repository](https://github.com/yaml/yaml-serde)
-- [:octicons-book-16: Documentation](https://docs.rs/serde_yaml/)
-- [:octicons-package-16: Crates.io Package](https://crates.io/crates/serde_yaml)
+- [:octicons-book-16: Documentation](https://docs.rs/yaml_serde/)
+- [:octicons-package-16: Crates.io Package](https://crates.io/crates/yaml_serde)
 - [:octicons-issue-opened-16: Issue Tracker](https://github.com/yaml/yaml-serde/issues)
