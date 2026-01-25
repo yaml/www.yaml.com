@@ -181,9 +181,9 @@ nav:
   - go-yaml: projects/go-yaml.md
   - pyyaml: projects/pyyaml.md
   - libyaml: projects/libyaml.md
-  - yq: projects/yq.md
   - yaml-serde: projects/yaml-serde.md
   - YAMLScript: projects/yamlscript.md
+  - yq: projects/yq.md
 - Services: services/index.md
 # - Resources:
 #   - resources/index.md
