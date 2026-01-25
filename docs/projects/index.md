@@ -34,13 +34,13 @@ These are the foundational YAML libraries and tools that The YAML Company direct
 
     [:octicons-arrow-right-24: Learn more](libyaml.md)
 
--   :simple-rust:{ .lg .middle } **[serde-yaml](serde-yaml.md)**
+-   :simple-rust:{ .lg .middle } **[yaml-serde](yaml-serde.md)**
 
     ---
 
     Rust's powerful YAML serialization framework for safe systems programming
 
-    [:octicons-arrow-right-24: Learn more](serde-yaml.md)
+    [:octicons-arrow-right-24: Learn more](yaml-serde.md)
 
 -   :material-script:{ .lg .middle } **[YAMLScript](yamlscript.md)**
 

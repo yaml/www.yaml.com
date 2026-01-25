@@ -365,8 +365,8 @@ social:
       <h4>libyaml</h4>
       <p>Fast C library used by many YAML implementations</p>
     </a>
-    <a href="/projects/serde-yaml/" class="project-card">
-      <h4>serde-yaml</h4>
+    <a href="/projects/yaml-serde/" class="project-card">
+      <h4>yaml-serde</h4>
       <p>Rust's YAML serialization framework</p>
     </a>
     <a href="/projects/yq/" class="project-card">

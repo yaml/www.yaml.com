@@ -182,7 +182,7 @@ nav:
   - pyyaml: projects/pyyaml.md
   - libyaml: projects/libyaml.md
   - yq: projects/yq.md
-  - serde-yaml: projects/serde-yaml.md
+  - yaml-serde: projects/yaml-serde.md
   - YAMLScript: projects/yamlscript.md
 - Services: services/index.md
 # - Resources:

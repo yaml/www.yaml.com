@@ -1,4 +1,4 @@
-# serde-yaml
+# yaml-serde
 
 YAML serialization for Rust's serde framework.
 
@@ -6,9 +6,9 @@ YAML serialization for Rust's serde framework.
 
 ## Overview
 
-**serde-yaml** is the standard YAML library for Rust applications. Built on the powerful serde serialization framework, it provides type-safe YAML processing for Rust's growing ecosystem.
+**yaml-serde** is the standard YAML library for Rust applications. Built on the powerful serde serialization framework, it provides type-safe YAML processing for Rust's growing ecosystem.
 
-- **Repository**: [github.com/yaml/serde-yaml](https://github.com/yaml/serde-yaml)
+- **Repository**: [github.com/yaml/yaml-serde](https://github.com/yaml/yaml-serde)
 - **Language**: Rust
 - **License**: MIT OR Apache-2.0
 - **Maintainer**: The YAML Company (fork of [dtolnay/serde-yaml](https://github.com/dtolnay/serde-yaml), now archived)
@@ -18,11 +18,11 @@ YAML serialization for Rust's serde framework.
 
 ---
 
-## Why serde-yaml Matters
+## Why yaml-serde Matters
 
 ### Powers Rust Applications
 
-serde-yaml is used by Rust applications for:
+yaml-serde is used by Rust applications for:
 
 - **Configuration Files** - Type-safe config management
 - **Data Serialization** - Converting Rust structs to/from YAML
@@ -48,7 +48,7 @@ serde-yaml is used by Rust applications for:
 
 ## The YAML Company Maintenance
 
-Under The YAML Company's stewardship, serde-yaml receives:
+Under The YAML Company's stewardship, yaml-serde receives:
 
 ### Security First
 - Regular security audits
@@ -72,7 +72,7 @@ Under The YAML Company's stewardship, serde-yaml receives:
 
 ## Maintenance & Accountability
 
-serde-yaml is professionally maintained by The YAML Company, led by Ingy döt Net, co-creator of YAML.
+yaml-serde is professionally maintained by The YAML Company, led by Ingy döt Net, co-creator of YAML.
 
 - **Security contact:** security@yaml.com
 - **Disclosure policy:** Coordinated disclosure with advance notice to YES members
@@ -84,7 +84,7 @@ Need supply chain documentation for compliance? [Learn about the YES Program →
 
 ## Type Safety Benefits
 
-serde-yaml provides compile-time guarantees:
+yaml-serde provides compile-time guarantees:
 
 ```rust
 // This won't compile if the YAML structure doesn't match
@@ -99,11 +99,11 @@ let port: u16 = config.database.port;  // Can't accidentally be a string
 
 ---
 
-## Support serde-yaml
+## Support yaml-serde
 
-serde-yaml is maintained through the [YES Program](../yes/index.md). YES members get:
+yaml-serde is maintained through the [YES Program](../yes/index.md). YES members get:
 
-- Priority support for serde-yaml issues
+- Priority support for yaml-serde issues
 - Early notification of security vulnerabilities
 - Influence over roadmap and feature development
 - Direct access to maintainers
@@ -114,7 +114,7 @@ serde-yaml is maintained through the [YES Program](../yes/index.md). YES members
 
 ## Resources
 
-- [:octicons-mark-github-16: GitHub Repository](https://github.com/dtolnay/serde-yaml)
+- [:octicons-mark-github-16: GitHub Repository](https://github.com/yaml/yaml-serde)
 - [:octicons-book-16: Documentation](https://docs.rs/serde_yaml/)
 - [:octicons-package-16: Crates.io Package](https://crates.io/crates/serde_yaml)
-- [:octicons-issue-opened-16: Issue Tracker](https://github.com/dtolnay/serde-yaml/issues)
+- [:octicons-issue-opened-16: Issue Tracker](https://github.com/yaml/yaml-serde/issues)
