@@ -42,6 +42,14 @@ These are the foundational YAML libraries and tools that The YAML Company direct
 
     [:octicons-arrow-right-24: Learn more](yaml-serde.md)
 
+-   :material-star:{ .lg .middle } **[YAMLStar](yamlstar.md)**
+
+    ---
+
+    A YAML 1.2 reference framework for all programming languages
+
+    [:octicons-arrow-right-24: Learn more](yamlstar.md)
+
 -   :material-script:{ .lg .middle } **[YAMLScript](yamlscript.md)**
 
     ---
@@ -51,6 +59,42 @@ These are the foundational YAML libraries and tools that The YAML Company direct
     [:octicons-arrow-right-24: Learn more](yamlscript.md)
 
 </div>
+
+---
+
+## Partnership Projects
+
+The YAML Company takes care of the entire YAML ecosystem—not just projects we own, but by collaborating directly with maintainers of tools that depend on our libraries.
+
+### Current Partners
+
+<div class="grid cards" markdown>
+
+-   :material-console:{ .lg .middle } **[yq](yq.md)**
+
+    ---
+
+    Lightweight YAML processor built on go-yaml. Maintained by Mike Farah with active The YAML Company collaboration.
+
+    [:octicons-arrow-right-24: Learn more](yq.md)
+
+-   :simple-c:{ .lg .middle } **[libfyaml](libfyaml.md)**
+
+    ---
+
+    High-performance C YAML parser. Maintained by Pantelis Antoniou with active The YAML Company collaboration.
+
+    [:octicons-arrow-right-24: Learn more](libfyaml.md)
+
+</div>
+
+### How We Support Ecosystem Partners
+
+**We maintain the foundation:** Many YAML tools are built on go-yaml, pyyaml, or libyaml. When we fix bugs and add features to these core libraries, we're supporting the entire ecosystem.
+
+**We contribute directly:** We work with project authors to submit pull requests, fix issues, and coordinate on security disclosures.
+
+**We build relationships:** We maintain close personal relationships with maintainers across the YAML ecosystem to ensure healthy collaboration.
 
 ---
 
@@ -113,34 +157,6 @@ The [YES Program](../yes/index.md) provides sustainable funding for:
 - Clear roadmap and priorities
 - Transparent governance
 - Active community engagement
-
----
-
-## Ecosystem Partners
-
-The YAML Company takes care of the entire YAML ecosystem—not just projects we own, but by collaborating directly with maintainers of tools that depend on our libraries.
-
-### How We Support Ecosystem Partners
-
-**We maintain the foundation:** Many YAML tools are built on go-yaml, pyyaml, or libyaml. When we fix bugs and add features to these core libraries, we're supporting the entire ecosystem.
-
-**We contribute directly:** We work with project authors to submit pull requests, fix issues, and coordinate on security disclosures.
-
-**We build relationships:** We maintain close personal relationships with maintainers across the YAML ecosystem to ensure healthy collaboration.
-
-### Current Partners
-
-<div class="grid cards" markdown>
-
--   :material-console:{ .lg .middle } **[yq](yq.md)**
-
-    ---
-
-    Lightweight YAML processor built on go-yaml. Maintained by Mike Farah with active The YAML Company collaboration.
-
-    [:octicons-arrow-right-24: Learn more](yq.md)
-
-</div>
 
 ---
 
