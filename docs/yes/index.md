@@ -74,6 +74,19 @@ All YES members get the core benefits above. Choose your tier based on your need
 
 <div class="grid" markdown>
 
+=== "YES Builder"
+
+    **Core benefits + Choose 1:**
+
+    - 5 support hours
+    - Beta access to new features
+
+    **Investment:** $149/mo
+
+    [Learn More →](builder.md){ .md-button .md-button--primary }
+
+    Questions? Email [yes@yaml.com](mailto:yes@yaml.com)
+
 === "YES Member"
 
     **Core benefits + Choose 2:**
