@@ -779,7 +779,7 @@ Download this PDF guide to share with:
 *   **Legal & Procurement Teams:** To evaluate upstream liability transfer and service-level agreements.
 *   **DevSecOps & Platform Engineers:** To plan SBOM integration and automated VEX triage.
 </div>
-<a href="secure-supply-chain.pdf" class="download-btn">:material-file-pdf-box: Download PDF</a>
+<a href="yaml-secure-supply-chain.pdf" class="download-btn">:material-file-pdf-box: Download PDF</a>
 </div>
 
 </div>
