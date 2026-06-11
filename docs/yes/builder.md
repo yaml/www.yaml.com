@@ -10,19 +10,19 @@ The YES Builder tier is designed for individual developers, early-stage startups
 
 ### Core Benefits (All Members)
 
-:material-check-circle:{ .green } 48-hour early security notifications
-:material-check-circle:{ .green } Security bulletins with fix timelines
-:material-check-circle:{ .green } Help decide what YAML builds next
-:material-check-circle:{ .green } YES Builder badge and logo usage rights
-:material-check-circle:{ .green } Recognition on yaml.com
-:material-check-circle:{ .green } Access to YES member forum
-:material-check-circle:{ .green } Quarterly virtual town halls
+- :material-check-circle:{ .green } 48-hour early security notifications
+- :material-check-circle:{ .green } Security bulletins with fix timelines
+- :material-check-circle:{ .green } Help decide what YAML builds next
+- :material-check-circle:{ .green } YES Builder badge and logo usage rights
+- :material-check-circle:{ .green } Recognition on yaml.com
+- :material-check-circle:{ .green } Access to YES member forum
+- :material-check-circle:{ .green } Quarterly virtual town halls
 
 ### Upstream Verification & Compliance
 
-:material-check-circle:{ .green } Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`)
-:material-check-circle:{ .green } Upstream-signed CycloneDX and SPDX SBOM compliance documentation
-:material-check-circle:{ .green } Upstream-signed VEX data to programmatically clear security alerts
+- :material-check-circle:{ .green } Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`)
+- :material-check-circle:{ .green } Upstream-signed CycloneDX and SPDX SBOM compliance documentation
+- :material-check-circle:{ .green } Upstream-signed VEX data to programmatically clear security alerts
 
 ### Choose 1 Additional Benefit
 
