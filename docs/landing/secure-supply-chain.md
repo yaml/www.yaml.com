@@ -438,6 +438,17 @@ hide:
     vertical-align: sub;
     line-height: 0;
   }
+  .cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+  }
+  @media (min-width: 768px) {
+    .cta-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
 </style>
 
 <div class="landing-container" markdown="1">
@@ -654,6 +665,73 @@ The YAML Enterprise Sustainability (YES) program is our commitment to solving th
 With the YES program, you are officially trading an unpredictable, 14-day manual patching and documentation crisis for a programmatic, 30-minute automated compliance workflow. Your security clearinghouses receive continuous, machine-readable assets—SLSA Level 3 provenance, continuous CycloneDX/SPDX SBOMs, and instant VEX triage data—ensuring that when the next major vulnerability drops, your team is already prepared, protected, and audit-ready.
 
 YAML is the invisible backbone of modern infrastructure. Stop manually documenting and rebuilding the core parsers in your deployments, and let the experts who built it secure it for you.
+
+### Register for Early Access
+
+<div class="cta-grid" markdown="1">
+
+<div class="signup-card" markdown="1">
+#### Apply for Early Access to the YES Program
+
+**Cost:** Free (Nothing)
+
+We will inform you as soon as hardened, SLSA Level 3-compliant binaries are available.
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<div class="form-group">
+<label for="main-full-name">Name *</label>
+<input type="text" id="main-full-name" name="name" required placeholder="John Doe">
+</div>
+<div class="form-group">
+<label for="main-corp-email">Corporate Email *</label>
+<input type="email" id="main-corp-email" name="email" required placeholder="john@company.com">
+</div>
+<div class="form-group">
+<label for="main-organization">Organization *</label>
+<input type="text" id="main-organization" name="company" required placeholder="Acme Corp">
+</div>
+<div class="form-group">
+<label for="main-role">Role / Job Title *</label>
+<input type="text" id="main-role" name="role" required placeholder="Infrastructure Compliance Manager">
+</div>
+<div class="checkbox-group">
+<label class="group-label">Dependency Manifest Survey *</label>
+<p style="font-size: 0.82em; margin-bottom: 12px; color: var(--md-default-fg-color--light);">Identify critical dependencies stalling your transition to an SLSA Level 3 pipeline:</p>
+<div class="checkbox-item">
+<input type="checkbox" id="main-lib-go" name="libraries[]" value="go-yaml">
+<label for="main-lib-go">go-yaml (Go)</label>
+</div>
+<div class="checkbox-item">
+<input type="checkbox" id="main-lib-py" name="libraries[]" value="pyyaml">
+<label for="main-lib-py">pyyaml (Python)</label>
+</div>
+<div class="checkbox-item">
+<input type="checkbox" id="main-lib-c" name="libraries[]" value="libyaml">
+<label for="main-lib-c">libyaml (C)</label>
+</div>
+<div class="checkbox-item">
+<input type="checkbox" id="main-lib-serde" name="libraries[]" value="yaml-serde">
+<label for="main-lib-serde">yaml-serde (Rust)</label>
+</div>
+</div>
+<button type="submit" class="submit-btn" style="margin-top: 15px;">Apply for Early Access</button>
+</form>
+</div>
+
+<div class="builder-card" markdown="1">
+<span class="card-badge">Coming Soon</span>
+#### YES Program "Builder"
+
+**Cost:** $149/mo
+
+Access to a private repository managed by The YAML Company to download hardened binaries as soon as they are built.
+
+*   **Scope of Use:** Covers hardened binaries and continuous SBOMs/VEX data for one commercial product line or one internal pipeline. (Upgrade required to deploy across unlimited enterprise pipelines).
+*   **Support Limits:** Community or basic email support only (e.g., 5 business day response target). *No SLA-backed 4-hour critical incident response (reserved for the Enterprise tier).*
+*   **No Custom Legal Procurement:** No custom enterprise indemnity caps or redlined contracts. Accept the standard click-wrap Terms of Service.
+</div>
+
+</div>
 
 <div class="download-banner" markdown="1">
 <div class="download-text" markdown="1">
