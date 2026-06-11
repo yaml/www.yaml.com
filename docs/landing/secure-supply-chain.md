@@ -444,11 +444,6 @@ hide:
     gap: 30px;
     margin: 30px 0;
   }
-  @media (min-width: 768px) {
-    .cta-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
 </style>
 
 <div class="landing-container" markdown="1">
