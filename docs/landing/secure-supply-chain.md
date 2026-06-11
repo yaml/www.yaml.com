@@ -444,6 +444,42 @@ hide:
     gap: 30px;
     margin: 30px 0;
   }
+  .print-only-cta {
+    display: none !important;
+  }
+  @media print {
+    .signup-card, 
+    .builder-card, 
+    .toc-card, 
+    .sticky-sidebar, 
+    .submit-btn, 
+    .download-banner, 
+    form, 
+    .cta-grid,
+    #register-for-early-access {
+      display: none !important;
+    }
+    .print-only-cta {
+      display: block !important;
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+    .print-only-cta p {
+      margin: 0 !important;
+      font-size: 1.1em !important;
+      color: #0f172a !important;
+    }
+    .print-only-cta a {
+      color: #d97706 !important;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 </style>
 
 <div class="landing-container" markdown="1">
@@ -728,6 +764,10 @@ Access to a private repository managed by The YAML Company to download hardened 
 
 </div>
 
+<div class="print-only-cta" markdown="1">
+To register for early access to the YES Program or to learn more about the YES Builder tier, please visit **[www.yaml.com/yes](https://www.yaml.com/yes)**.
+</div>
+
 <div class="download-banner" markdown="1">
 <div class="download-text" markdown="1">
 #### Need to share this with your security clearinghouse?
@@ -739,7 +779,7 @@ Download this PDF guide to share with:
 *   **Legal & Procurement Teams:** To evaluate upstream liability transfer and service-level agreements.
 *   **DevSecOps & Platform Engineers:** To plan SBOM integration and automated VEX triage.
 </div>
-<a href="#" class="download-btn">:material-file-pdf-box: Download PDF</a>
+<a href="secure-supply-chain.pdf" class="download-btn">:material-file-pdf-box: Download PDF</a>
 </div>
 
 </div>
