@@ -127,9 +127,10 @@ Pricing available upon request based on scope and requirements.
 ## How to Choose
 
 ### Choose YES Builder if:
-- You are an early-stage startup or small team
-- You want to support YAML open source sustainability
-- You need basic early security alerts and standard support
+- You need baseline supply chain compliance assets (SBOM, VEX, SLSA Level 3) for your build pipelines
+- You want to verify and secure the essential open-source YAML infrastructure in your stack
+- You require direct access to cryptographically signed upstream binaries
+- Standard click-wrap Terms of Service fit your procurement workflow
 
 ### Choose YES Member if:
 - YAML is important but not mission-critical in your stack

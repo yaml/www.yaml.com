@@ -37,10 +37,10 @@ Select 1 option that provides the most value for your organization:
 
 YES Builder is ideal for:
 
-- Individual developers using YAML in commercial projects
-- Early-stage startups using YAML in their build environments
-- Small teams requiring basic compliance assets (SBOM, VEX, SLSA Level 3) for a single build pipeline
-- Standard click-wrap Terms of Service without custom legal procurement/redlining
+- Organizations needing to establish basic supply chain security (SBOM, VEX, SLSA Level 3) for their pipelines
+- Engineering teams verifying critical open-source infrastructure components in their stacks
+- Individual developers and teams needing upstream-signed, hardened YAML binaries
+- Standard click-wrap Terms of Service without complex legal custom redlining
 
 ---
 
