@@ -1,6 +1,18 @@
 # YES Program Benefits Comparison
 
-Compare all three YES tiers to find the right level of support and influence for your organization.
+Compare all four YES tiers to find the right level of support and influence for your organization.
+
+---
+
+## Upstream Verification & Compliance
+
+All YES members (Builder tier and above) receive these verification and compliance assets:
+
+| Upstream Verification & Compliance Benefit | All Tiers |
+|--------------------------------------------|:---------:|
+| Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`) | :material-check:{ .green } |
+| Upstream-signed CycloneDX and SPDX SBOM compliance documentation | :material-check:{ .green } |
+| Upstream-signed VEX data to programmatically clear security alerts | :material-check:{ .green } |
 
 ---
 
@@ -9,7 +21,7 @@ Compare all three YES tiers to find the right level of support and influence for
 All YES members receive these benefits regardless of tier:
 
 | Core Benefit | All Tiers |
-|--------------|-----------|
+|--------------|:---------:|
 | 48-hour early security notifications | :material-check:{ .green } |
 | Security bulletins with fix timelines | :material-check:{ .green } |
 | Help decide what YAML builds next | :material-check:{ .green } |
@@ -24,6 +36,7 @@ All YES members receive these benefits regardless of tier:
 
 |  | YES Builder | YES Member | YES Partner | YES Leader |
 |---|:---:|:---:|:---:|:---:|
+| **Upstream Verification & Compliance** | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } |
 | **Core Benefits** | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } |
 | **Additional Benefits** | Choose 1 | Choose 2 | Choose 4 | Choose 6 |
 | **Recognition Level** | Builder | Member | Partner | Leader |
