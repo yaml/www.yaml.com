@@ -76,10 +76,15 @@ All YES members get the core benefits above. Choose your tier based on your need
 
 === "YES Builder"
 
-    **Core benefits + Choose 1:**
+    **Core benefits + Upstream Verification & Compliance + Choose 1:**
 
-    - 5 support hours
-    - Beta access to new features
+    *   **Upstream Verification & Compliance:**
+        - Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`)
+        - Upstream-signed CycloneDX and SPDX SBOM compliance documentation
+        - Upstream-signed VEX data to programmatically clear security alerts
+    *   **Choose 1 additional benefit:**
+        - 5 support hours
+        - Beta access to new features
 
     **Investment:** $149/mo
 
