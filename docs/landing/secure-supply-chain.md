@@ -36,7 +36,6 @@ hide:
     width: 100%;
     margin: 0 auto;
     padding: 10px 0px 40px 0px;
-    overflow-x: hidden;
   }
   .landing-header {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -158,17 +157,61 @@ hide:
   }
   @media (min-width: 1024px) {
     .sticky-sidebar {
-      position: sticky;
-      top: 30px;
-      height: fit-content;
+      position: static;
     }
   }
-  .signup-card, .builder-card {
+  .signup-card, .builder-card, .toc-card {
     background: var(--md-code-bg-color);
     border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+  }
+  .toc-card {
+    padding: 25px;
+  }
+  @media (min-width: 1024px) {
+    .toc-card {
+      position: sticky;
+      top: 80px;
+    }
+  }
+  .toc-card h3 {
+    margin-top: 0;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--md-primary-fg-color);
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 8px;
+  }
+  .toc-list {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .toc-list li {
+    font-size: 0.85em;
+    line-height: 1.4;
+    padding-left: 12px;
+    border-left: 2px solid var(--md-default-fg-color--lightest);
+    transition: border-color 0.2s;
+  }
+  .toc-list li:hover {
+    border-left-color: var(--md-primary-fg-color);
+  }
+  .toc-list a {
+    color: var(--md-default-fg-color--light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover {
+    color: var(--md-primary-fg-color);
   }
   .signup-card h3, .builder-card h3 {
     margin-top: 0;
@@ -326,22 +369,25 @@ hide:
     gap: 15px;
     margin-top: 30px;
   }
-  @media (min-width: 640px) {
-    .download-banner {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
   .download-text h4 {
     margin: 0 0 5px 0;
     font-size: 1.1em;
     font-weight: 700;
   }
   .download-text p {
-    margin: 0 !important;
+    margin: 0 0 8px 0 !important;
     font-size: 0.9em !important;
     color: var(--md-default-fg-color--light);
+  }
+  .download-text ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .download-text li {
+    font-size: 0.85em;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 5px;
+    line-height: 1.4;
   }
   .download-btn {
     background: var(--md-primary-fg-color);
@@ -356,6 +402,41 @@ hide:
   }
   .download-btn:hover {
     opacity: 0.9;
+  }
+  .formula-container {
+    text-align: center;
+    margin: 1.5em 0;
+    font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--md-default-fg-color);
+  }
+  @media (max-width: 768px) {
+    .formula-container {
+      font-size: 0.9em;
+    }
+  }
+  .formula-container .formula-highlight {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+    font-style: italic;
+  }
+  .formula-container .formula-operator {
+    font-style: normal;
+    margin: 0 6px;
+  }
+  .formula-container sub, .formula-container sup {
+    font-size: 0.55em;
+    font-family: inherit;
+    font-style: italic;
+  }
+  .formula-container sup {
+    vertical-align: super;
+    line-height: 0;
+  }
+  .formula-container sub {
+    vertical-align: sub;
+    line-height: 0;
   }
 </style>
 
@@ -373,17 +454,17 @@ hide:
 
 ### Executive Summary: Securing the Foundation of Modern Infrastructure
 
-In enterprise infrastructure, the most critical components are the ones nobody notices until a crisis hits. As the upstream maintainers of YAML, we understand the exhausting reality you face as an infrastructure and compliance manager: executives rarely care about foundational linchpins until they break. You are tasked with securing deeply embedded, rarely seen open-source dependencies across your entire technology stack, often battling limited financial and human resources to mitigate risks and meet strict regulatory mandates.
+In enterprise software infrastructure, the most vulnerable components are the ones nobody notices until a crisis hits. As the upstream maintainers of YAML, we understand the exhausting reality you face as an infrastructure and compliance manager. You are tasked with securing deeply embedded, rarely seen open-source dependencies across your entire technology stack, often battling limited financial and human resources to mitigate risks and meet strict regulatory mandates.
 
-It is impossible to discuss this resource exhaustion without addressing the elephant in the room: AI-generated code. Whether your organization views generative coding assistants as a triumph of engineering velocity or a liability of unvetted technical debt, one observable fact is undeniable—they create a massive amount of noise. By drastically lowering the barrier to committing code, these tools inadvertently multiply the volume of deeply embedded third-party dependencies sprawling across the enterprise stack. This rapid code expansion acts as a threat multiplier, triggering massive false-positive alert noise from standard scanners and forcing security teams to spend 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable. We know the pressure of managing these invisible, noisy layers, and the YAML Enterprise Sustainability (YES) Program is designed to actively share that burden.
+It is impossible to discuss this resource exhaustion without addressing the elephant in the room: AI-generated code. Whether your organization views generative coding assistants as a triumph of engineering velocity or a liability of accumulated technical debt, one observable fact is undeniable: they create a massive amount of noise. By drastically lowering the barrier to committing code, these tools inadvertently multiply the volume of deeply embedded third-party dependencies sprawling across the enterprise stack. This rapid code expansion acts as a threat multiplier, triggering massive false-positive alert noise from standard scanners and forcing security teams to spend 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable. We know the pressure of managing these invisible, noisy layers, and the YAML Enterprise Sustainability (YES) Program is designed to actively share that burden.
 
-Under new regulatory mandates like the EU Cyber Resilience Act (CRA) and US Executive Order 14028, organizations bear strict legal liability for the safety and continuous maintenance of all embedded open-source components. For compliance managers and engineering directors, the unmanaged status quo is no longer sustainable. When a vulnerability is disclosed, the unmanaged remediation cycle typically spans 10 to 14 days due to localized search friction and unverified build chains. At a blended developer rate, a single multi-day CVE crisis easily costs an enterprise \$5,000 to \$15,000 in lost engineering velocity alone. Furthermore, relying on ad-hoc CLI tools to self-generate documentation post-compilation regularly overlooks 30% to 70% of nested or manually installed packages, leaving your organization with severe, hidden compliance liabilities.
+Under new regulatory mandates like the [EU Cyber Resilience Act (CRA)](https://eur-lex.europa.eu/eli/reg/2024/2847/oj) and [US Executive Order 14028](https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity), organizations bear strict legal liability for the safety and continuous maintenance of all embedded open-source components. For compliance managers and engineering directors, the unmanaged status quo is no longer sustainable. When a vulnerability is disclosed, the unmanaged remediation cycle typically spans 10 to 14 days due to complex code bases and unverified build chains. At a blended developer rate, a single multi-day CVE crisis easily costs an enterprise \$5,000 to \$15,000 in lost engineering velocity alone. Furthermore, relying on ad-hoc CLI tools to self-generate documentation post-compilation regularly overlooks 30% to 70% of nested or manually installed packages, leaving your organization with severe, hidden compliance liabilities.
 
 The **YAML Verified Distribution** is a proactive shift from putting out fires to engineering a secure future. We are offering a premium assurance model: an assured pipeline providing cryptographically signed, **SLSA Level 3-compliant binaries** directly from the upstream maintainers.
 
 By participating in our early access program, your security clearinghouses receive:
 
-*   **Non-Falsifiable Provenance:** Hardened binaries for the core YAML family (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`) built in isolated, ephemeral environments.
+*   **Non-Falsifiable Provenance:** Hardened binaries for the core YAML family (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`) built in isolated, ephemeral environments (GitHub Attestation packages).
 *   **Continuous Compliance Assets:** Instantly queryable CycloneDX and SPDX SBOMs packaged alongside the binaries.
 *   **Automated Triage:** Upstream-signed VEX (Vulnerability Exploitability eXchange) data to instantly neutralize false positives and eliminate manual triage guesswork.
 
@@ -393,11 +474,11 @@ Join the early access list today to secure your pipeline, eliminate administrati
 
 ### 1. The Root Cause of Supply Chain Insecurity: Resource Exhaustion
 
-Much of the commercial security sector—specifically the vendors selling turnkey applications and promising to solve all your compliance problems because they are "cybersecurity experts"—treats software supply chain vulnerabilities as purely technical failures that can be fixed by simply purchasing another scanning tool. As an infrastructure and compliance manager who actually operates within this industry, you likely already know the reality: supply chain insecurity is fundamentally a resource problem.
+Much of the commercial security sector treats software supply chain vulnerabilities as purely technical failures that can be fixed by simply purchasing another scanning tool. I’m talking about the vendors selling turnkey applications and promising to solve all your compliance problems just saying “trust us.” As an infrastructure and compliance manager who actually operates within this industry, you likely already know the reality: supply chain insecurity is fundamentally a resource problem.
 
-Recent complex systems analyses evaluating software supply chain security validate this exact experience. Utilizing the DEMATEL (Decision-Making Trial and Evaluation Laboratory) technique—a framework designed to map cause-and-effect relationships and separate root causes from downstream effects within complex systems—researchers have mapped the true drivers of software vulnerability. The empirical data is definitive: **"limited financial and human resources" and "human factors" are the primary, dominant root causes driving software supply chain insecurity.**
+Recent complex systems analyses evaluating software supply chain security validate this exact experience. Utilizing the [DEMATEL (Decision-Making Trial and Evaluation Laboratory) technique](https://doi.org/10.1371/journal.pone.0344098) — a framework designed to map cause-and-effect relationships and separate root causes from downstream effects within complex systems — researchers have mapped the true drivers of software vulnerability. The empirical data is definitive: **"limited financial and human resources" and "human factors" are the primary, dominant root causes driving software supply chain insecurity.**
 
-Conversely, the highly visible crises that typically trigger executive panic—such as insecure software distribution mechanisms, inadequate continuous monitoring, and the growing complexity of cyber-attacks—are mathematically proven to be downstream effects. They are simply the symptoms that manifest when an organization's engineering and compliance teams are stretched beyond their capacity.
+Conversely, the highly visible crises that typically trigger executive panic — such as insecure software distribution mechanisms, inadequate continuous monitoring, and the growing complexity of cyber-attacks — are mathematically proven to be downstream effects. They are simply the symptoms that manifest when an organization's engineering and compliance teams are stretched beyond their capacity.
 
 This distinction is critical for enterprise strategy. When tools like AI coding assistants multiply the volume of deeply embedded third-party dependencies, they rapidly drain your already limited human resources. If your organization attempts to solve this by simply adding more security scanners, you are only treating the downstream symptoms. The scanners will inevitably generate more false-positive alert noise, which further exhausts your engineers, creating a vicious, unmanageable cycle.
 
@@ -405,7 +486,7 @@ This highlights the ultimate failure of modern compliance tooling. **Deploying a
 
 To secure the software supply chain, organizations must neutralize the root cause by strategically offloading this human resource burden. You do not need another passive tool; you need an **active governance partner**.
 
-This is the exact operational mandate of the **YAML Enterprise Sustainability (YES) Program**. By subscribing to the YES program, you are partnering directly with the upstream authors who built the core libraries. We care about the integrity of your deployment because it relies on the integrity of our life's work. By acting as an extension of your own team, we eliminate the resource drain at the root, ensuring that you are never left alone to answer leadership when a critical vulnerability drops.
+This is the exact operational mandate of the **YAML Enterprise Sustainability (YES) Program**. By subscribing to the YES program, you are partnering directly with the upstream authors who built the core libraries. We care about the integrity of your deployment because it relies on the integrity of our work. By acting as an extension of your own team, we eliminate the resource drain at the root, ensuring that you are never left alone to answer leadership when a critical vulnerability drops.
 
 <div class="infographic-wrapper">
 <div class="infographic-title">Traditional SDLC: Find issues before release</div>
@@ -455,22 +536,41 @@ flowchart LR
 
 When a high-severity vulnerability (CVE) is disclosed in a foundational upstream library, your compliance and security operations teams are immediately forced to answer three critical questions: Are we exposed? Where is it running? And how do we definitively prove our remediation to external auditors?
 
-The cybersecurity industry’s favorite buzzword for solving this is "shift left"—the mandate to catch vulnerabilities earlier in the development lifecycle. The math behind the buzzword is sound: according to the Consortium for Information & Software Quality (CISQ), addressing a vulnerability late in the deployment lifecycle costs 4x to 10x more than catching it upstream during the initial component curation phase.
+The cybersecurity industry’s favorite buzzword for solving this is "shift left" — the mandate to catch vulnerabilities earlier in the development lifecycle. The math behind the buzzword is sound: according to the Consortium for Information & Software Quality (CISQ) in [The Cost of Poor Software Quality in the US: A 2022 Report](https://www.it-cisq.org/wp-content/uploads/sites/6/2022/11/CPSQ-Report-Nov-22-2.pdf), addressing a vulnerability late in the deployment lifecycle costs 4x to 10x more than catching it upstream during the initial component curation phase.
 
-However, as an infrastructure manager, you likely know the exhausting reality of this trend. In practice, "shifting left" usually just means purchasing another passive scanning tool and shifting the administrative burden onto your internal developers. To translate this technical debt into financial ROI for your leadership team, we can apply a standard Dev Time Formula: *Cost per CVE Crisis = (Hours spent tracking + Hours spent rebuilding) × Blended Developer Hourly Rate.*
+However, as an infrastructure manager, you likely know the exhausting reality of this trend. In practice, "shifting left" usually just means purchasing another passive scanning tool and shifting the administrative burden onto your internal developers. To translate this technical debt into financial ROI for your leadership team, we can apply a standard Dev Time Formula:
 
-Using industry benchmarks, an average enterprise deals with dozens of high-risk open-source vulnerability alerts per codebase annually. At a standard blended developer rate of $100 per hour, a single unmanaged CVE crisis easily costs an enterprise **\$5,000 to \$15,000 per incident** in lost engineering velocity alone.
+<div class="formula-container">
+  <span class="formula-highlight">Cost per CVE Crisis</span>
+  <span class="formula-operator">=</span>
+  <span class="formula-operator">(</span>Hours spent tracking <span class="formula-operator">+</span> Hours spent rebuilding<span class="formula-operator">)</span>
+  <span class="formula-operator">×</span>
+  Blended Developer Hourly Rate
+</div>
+
+According to industry benchmarks, an average enterprise deals with dozens of high-risk open-source vulnerability alerts per codebase annually. At a standard blended developer rate of $100 per hour, a single unmanaged CVE crisis easily costs an enterprise **\$5,000 to \$15,000 per incident** in lost engineering spend alone.
 
 This excessive cost is a direct result of the manual remediation timeline, which typically spans 10 to 14 business days due to the following administrative bottlenecks:
 
 *   **Phase 1: Sourcing and Identification (3 to 5 Days)**  
-    Standard network or container scanners surface massive false-positive noise because micro-libraries are frequently embedded deep within transitively pulled dependencies or compiled statically into base images. Consequently, security teams waste 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable in their specific runtime environment. Engineers are forced to manually hunt through hundreds of individual Git repositories and parse custom build scripts just to locate the vulnerable component.
+    Standard network or container scanners surface massive false-positive noise because micro-libraries are frequently embedded deep within dependencies or compiled statically into base images. Consequently, security teams waste 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable in their specific runtime environment. Engineers are forced to manually hunt through hundreds of individual Git repositories and parse custom build scripts just to locate the vulnerable component.
 *   **Phase 2: Verifying and Rebuilding (4 to 5 Days)**  
     Once located, engineering teams must patch the code, rebuild the binary, and attempt to self-generate a new Software Bill of Materials (SBOM). However, relying on ad-hoc CLI tools to build provenance files post-compilation is deeply flawed; empirical research shows these tools regularly overlook 30% to 70% of nested or manually installed packages. Furthermore, a manual rebuild lacks non-falsifiable cryptographic provenance, leaving security clearinghouses unable to definitively prove that the newly compiled machine code wasn't exposed to an attack during the emergency patch cycle.
 *   **Phase 3: Legal, Compliance, and Audit Assembly (3 to 4 Days)**  
     Finally, compliance leads are trapped in a multi-week verification loop. They must manually document the remediation, link it to the self-generated (and often incomplete) software inventory, and wait for legal sign-off before presenting it to government auditors or enterprise clients demanding proof of safety.
 
-In total, an unmanaged remediation cycle for a single foundational vulnerability paralyzes your engineering pipeline for nearly two weeks. True security does not mean shifting the administrative burden left onto your internal teams; it means shifting the cryptographic anchoring all the way left directly to the upstream maintainers. As long as your organization relies on an unverified build chain, you are accepting this 14-day administrative nightmare as a standard operating cost.
+In total, an unmanaged remediation cycle for a single foundational vulnerability paralyzes your engineering pipeline for nearly two weeks. Sustainable security does not mean shifting the administrative burden left onto other internal teams; it means shifting the authoritative verification all the way left directly to the upstream maintainers. As long as your organization relies on an unverified build chain, you are accepting this 14-day administrative nightmare as a standard operating cost.
+
+While developer hours are a direct operational expense, financially astute managers focus on a much larger liability: **Cumulative Risk Exposure (*R*)**. During the patching window, the organization remains vulnerable to exploit. Actuarially, this risk is modeled as the integral of the threat probability density *h(t)* (hazard rate of exploit over time) and the potential financial loss *L* (impact of a breach) over the remediation window *T*:
+
+<div class="formula-container">
+  R(T)
+  <span class="formula-operator">=</span>
+  <span class="formula-operator">&int;</span><sub>0</sub><sup>T</sup>
+  h(t) &middot; L dt
+</div>
+
+Under the unmanaged status quo, *T* ≈ 14 days. As threat actors analyze the public vulnerability and deploy automated scanning exploits in the wild, the hazard rate *h(t)* escalates, causing the risk exposure area under the curve to grow rapidly. By reducing the remediation window to *T* < 30 minutes via YES Program automated compliance, the integration limit is compressed to near-zero, effectively neutralizing the cumulative risk before it can accumulate.
 
 <div class="infographic-wrapper">
 <div class="infographic-title">14-Day CVE Crisis Remediation Timeline</div>
@@ -523,11 +623,11 @@ This is the core operational advantage of the **YAML Verified Distribution**. By
 Here is how pre-packaged, machine-readable metadata transforms the remediation timeline:
 
 *   **Instant Exposure Pinpointing via Upstream SBOMs**  
-    When a new CVE is announced, your security orchestration (SOAR) platforms no longer need to spend days manually hunting through Git repositories, parsing custom build scripts, or scanning deeply nested container images. Instead, they instantly ingest our continuous, upstream-signed CycloneDX and SPDX SBOMs. By querying your centralized software inventory against our upstream feed, your clearinghouse can locate every container, microservice, and product binary utilizing that exact SHA-256 hash in seconds, entirely bypassing the manual auditing phase.
+    When a new CVE is announced, your Security Orchestration, Automation, and Response (SOAR) platforms no longer need to spend days manually hunting through Git repositories, parsing custom build scripts, or scanning deeply nested container images. Instead, they instantly ingest our continuous, upstream-signed CycloneDX and SPDX SBOMs. By querying your centralized software inventory against our upstream feed, your clearinghouse can locate every container, microservice, and product binary utilizing that exact SHA-256 hash in seconds, entirely bypassing the manual auditing phase.
 *   **Neutralizing Alert Fatigue via VEX Data**  
-    Not every vulnerability natively impacts every deployment environment. For example, a flaw in a C-based parsing routine in `libyaml` might not be exploitable if an enterprise is only using it via a specific, memory-safe Rust binding wrapper in `yaml-serde`. Instead of wasting hundreds of hours patching unexploitable flaws, your clearinghouse automatically ingests our upstream-signed VEX (Vulnerability Exploitability eXchange) statements. These machine-readable files explicitly declare the exploitability status of the CVE, instantly neutralizing false positives and automatically clearing alerts for products that are structurally unaffected.
+    Not every vulnerability natively impacts every deployment environment. For example, a flaw in a C-based parsing routine in `libyaml` might not be exploitable if an enterprise is only using it via a specific, memory-safe Rust binding wrapper in `yaml-serde`. Instead of wasting dozens of hours patching unexploitable flaws, your clearinghouse automatically ingests our upstream-signed VEX (Vulnerability Exploitability eXchange) statements. These machine-readable files explicitly declare the exploitability status of the CVE, instantly neutralizing false positives and automatically clearing alerts for products that are structurally unaffected.
 *   **Instant Audit Validation via SLSA Level 3 Attestations**  
-    When it is time to push a patched binary to production or deliver it to a federal client, your compliance packet is already complete. Because our binaries are built in isolated, ephemeral environments, they arrive with non-falsifiable SLSA Level 3 in-toto attestations. Your legal and security teams do not have to waste days attempting to audit the build pipeline themselves. They simply attach our upstream cryptographic signature and provenance file to their delivery manifest, programmatically proving to federal regulators or EU CRA compliance bodies that the binary was built in a tamper-proof environment directly by the software's authors.
+    When it is time to push a patched binary to production or deliver it to a regulated client, your compliance packet is already complete. Because our binaries are built in isolated, ephemeral environments, they arrive with non-falsifiable SLSA Level 3 in-toto attestations. Your legal and security teams do not have to waste days attempting to audit the build pipeline themselves. They simply attach our upstream cryptographic signature and provenance file to their delivery manifest, programmatically proving to federal regulators or EU CRA compliance bodies that the binary was built in a tamper-proof environment directly by the software's authors.
 
 By substituting manual code analysis and guesswork with an upstream-verified pipeline, your security team reclaims its engineering velocity. Ultimately, this subscription allows you to trade an expensive, unpredictable two-week engineering crisis for an automated, half-hour compliance non-event.
 
@@ -537,13 +637,13 @@ The landscape of software liability is fundamentally changing. For decades, the 
 
 For infrastructure and compliance managers, this creates an immediate friction point. You cannot easily defend a self-generated SBOM built from a community-maintained repository. When your organization asks who is accountable for the continuous security of your core infrastructure, pointing to a GitHub issues page managed by volunteers is no longer a defensible corporate strategy.
 
-To be clear: subscribing to the YAML Enterprise Sustainability (YES) program does not magically absolve your organization of all regulatory liability. As recent complex systems analyses demonstrate, technical controls and supply chain security can only be effective when supported by your own strong internal governance and competent human resources. However, the YES program systematically resolves the specific administrative and cryptographic roadblocks of proving the integrity of the YAML libraries used within your software and your build environments.
+To be clear: subscribing to the YAML Enterprise Sustainability (YES) program does not magically absolve your organization of all regulatory liability. As recent complex systems analyses demonstrate, technical controls and supply chain security can only be effective when supported by your own strong internal governance and skillful human resources. However, the YES program systematically resolves the specific administrative and cryptographic roadblocks of proving the integrity of the YAML libraries used within your software and your build environments.
 
-These foundational pieces are not just random libraries; they are the literal bedrock of modern infrastructure. The `go-yaml` library natively powers Kubernetes, Helm, Kustomize, and the entire Go ecosystem, while `pyyaml` acts as the foundation for deployment automation tools like Ansible and Salt. High-performance environments similarly rely on `libyaml` for C-based parsing and `yaml-serde` for safe systems programming in Rust. Because these libraries sit at the absolute bottom of the technology stack powering global ecosystems, ensuring their cryptographic provenance effectively secures your deployment automation pipelines themselves.
+These foundational pieces are not just helper libraries; they are the literal underpinning of modern infrastructure. The `go-yaml` library natively powers Kubernetes, Helm, Kustomize, and the entire Go ecosystem, while `pyyaml` acts as the foundation for deployment automation tools like Ansible and Salt. High-performance environments similarly rely on `libyaml` for C-based parsing and `yaml-serde` for safe systems programming in Rust. Because these libraries sit at the absolute bottom of your technology stacks powering global ecosystems, ensuring their cryptographic provenance is a first step in securing your deployment automation pipelines themselves.
 
 At this stage of the YES program's development, our commitment to you is straightforward: our legal guarantees are clearly defined in the simple contract you will receive as part of your membership. By purchasing the subscription, you are officially delegating the burden of continuous compliance monitoring, automated SBOM tracking, and coordinated vulnerability disclosures directly to The YAML Company. As our program scales, we intend to introduce expanded procurement warranties and indemnity limits. By becoming an early access subscriber today, your team secures a foundational partnership and will be the first to receive these advanced enterprise guarantees as they roll out.
 
-Ultimately, by using the YAML Verified Distribution, you can officially document that your foundational serialization layer is professionally managed by a recognized public steward. This satisfies the CRA's strict mandates for supply chain due diligence out of the box, transforming a massive organizational liability into a solved administrative requirement.
+Ultimately, by using the YAML Verified Distribution, you can officially document that your foundational serialization layer is professionally managed by a recognized public company. This satisfies the CRA's strict mandates for supply chain due diligence out of the box, transforming a massive organizational liability into a solved administrative requirement.
 
 ### Conclusion: Shifting the Burden Upstream
 
@@ -553,14 +653,20 @@ The YAML Enterprise Sustainability (YES) program is our commitment to solving th
 
 With the YES program, you are officially trading an unpredictable, 14-day manual patching and documentation crisis for a programmatic, 30-minute automated compliance workflow. Your security clearinghouses receive continuous, machine-readable assets—SLSA Level 3 provenance, continuous CycloneDX/SPDX SBOMs, and instant VEX triage data—ensuring that when the next major vulnerability drops, your team is already prepared, protected, and audit-ready.
 
-YAML is the invisible backbone of modern infrastructure. Stop manually documenting and rebuilding the bedrock of your deployments, and let the experts who built it secure it for you.
+YAML is the invisible backbone of modern infrastructure. Stop manually documenting and rebuilding the core parsers in your deployments, and let the experts who built it secure it for you.
 
 <div class="download-banner" markdown="1">
 <div class="download-text" markdown="1">
 #### Need to share this with your security clearinghouse?
-Download a clean, printer-friendly PDF copy of this whitepaper for internal review.
+
+Download this PDF guide to share with:
+
+*   **Security Leadership (CISOs & Directors):** To align on MTTR reduction and the assured SLA.
+*   **Compliance & Audit Managers:** To review proof of safety for EU CRA and federal mandates.
+*   **Legal & Procurement Teams:** To evaluate upstream liability transfer and service-level agreements.
+*   **DevSecOps & Platform Engineers:** To plan SBOM integration and automated VEX triage.
 </div>
-<a href="#" class="download-btn">:material-file-pdf-box: Download PDF Guide</a>
+<a href="#" class="download-btn">:material-file-pdf-box: Download PDF</a>
 </div>
 
 </div>
@@ -624,6 +730,18 @@ Introductory pricing tier designed for individual developers and single pipeline
 *   **Scope:** Covered for one commercial product line or internal pipeline.
 *   **Support:** Standard community & basic email support.
 *   **Agreement:** Standard click-wrap Terms of Service.
+</div>
+
+<div class="toc-card" markdown="1">
+<h3>Table of Contents</h3>
+<ul class="toc-list">
+  <li><a href="#executive-summary-securing-the-foundation-of-modern-infrastructure">Executive Summary</a></li>
+  <li><a href="#1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion">1. The Root Cause</a></li>
+  <li><a href="#2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain">2. The 14-Day CVE Crisis</a></li>
+  <li><a href="#3-the-30-minute-paradigm-engineering-a-secure-future">3. The 30-Minute Paradigm</a></li>
+  <li><a href="#4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness">4. Accountability Shift (EU CRA)</a></li>
+  <li><a href="#conclusion-shifting-the-burden-upstream">Conclusion</a></li>
+</ul>
 </div>
 
 </div>
