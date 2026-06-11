@@ -171,6 +171,7 @@ extra:
 nav:
 - YES Program:
   - yes/index.md
+  - YES Builder: yes/builder.md
   - YES Member: yes/member.md
   - YES Partner: yes/partner.md
   - YES Leader: yes/leader.md

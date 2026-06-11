@@ -387,8 +387,8 @@ social:
       <div class="tier-features">
         ✓ Core security benefits<br>
         ✓ Starter support access<br>
-        ✓ Choose 1 additional benefit [Stub]<br>
-        ✓ YES Builder badge [Stub]
+        ✓ Choose 1 additional benefit<br>
+        ✓ YES Builder badge
       </div>
       <a href="/yes/builder/" class="tier-cta">Learn More</a>
     </div>
