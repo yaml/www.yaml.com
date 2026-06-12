@@ -507,14 +507,7 @@ hide:
       line-height: 1.4 !important;
     }
     .gantt-wrapper {
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch !important;
-    }
-    .gantt-wrapper svg {
-      min-width: 650px !important;
-      max-width: none !important;
-      width: 650px !important;
-      height: auto !important;
+      display: none !important;
     }
   }
 </style>
