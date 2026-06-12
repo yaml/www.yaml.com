@@ -74,6 +74,24 @@ All YES members get the core benefits above. Choose your tier based on your need
 
 <div class="grid" markdown>
 
+=== "YES Builder"
+
+    **Core benefits + Upstream Verification & Compliance + Choose 1:**
+
+    *   **Upstream Verification & Compliance:**
+        - Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`)
+        - Upstream-signed CycloneDX and SPDX SBOM compliance documentation
+        - Upstream-signed VEX data to programmatically clear security alerts
+    *   **Choose 1 additional benefit:**
+        - 5 support hours
+        - Beta access to new features
+
+    **Investment:** $149/mo
+
+    [Learn More →](builder.md){ .md-button .md-button--primary }
+
+    Questions? Email [yes@yaml.com](mailto:yes@yaml.com)
+
 === "YES Member"
 
     **Core benefits + Choose 2:**

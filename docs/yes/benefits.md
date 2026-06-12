@@ -1,6 +1,18 @@
 # YES Program Benefits Comparison
 
-Compare all three YES tiers to find the right level of support and influence for your organization.
+Compare all four YES tiers to find the right level of support and influence for your organization.
+
+---
+
+## Upstream Verification & Compliance
+
+All YES members (Builder tier and above) receive these verification and compliance assets:
+
+| Upstream Verification & Compliance Benefit | All Tiers |
+|--------------------------------------------|:---------:|
+| Cryptographically signed, SLSA Level 3 binaries (`go-yaml`, `pyyaml`, `libyaml`, and `yaml-serde`) | :material-check:{ .green } |
+| Upstream-signed CycloneDX and SPDX SBOM compliance documentation | :material-check:{ .green } |
+| Upstream-signed VEX data to programmatically clear security alerts | :material-check:{ .green } |
 
 ---
 
@@ -9,7 +21,7 @@ Compare all three YES tiers to find the right level of support and influence for
 All YES members receive these benefits regardless of tier:
 
 | Core Benefit | All Tiers |
-|--------------|-----------|
+|--------------|:---------:|
 | 48-hour early security notifications | :material-check:{ .green } |
 | Security bulletins with fix timelines | :material-check:{ .green } |
 | Help decide what YAML builds next | :material-check:{ .green } |
@@ -22,11 +34,12 @@ All YES members receive these benefits regardless of tier:
 
 ## Tier Comparison
 
-|  | YES Member | YES Partner | YES Leader |
-|---|:---:|:---:|:---:|
-| **Core Benefits** | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } |
-| **Additional Benefits** | Choose 2 | Choose 4 | Choose 6 |
-| **Recognition Level** | Member | Partner | Leader |
+|  | YES Builder | YES Member | YES Partner | YES Leader |
+|---|:---:|:---:|:---:|:---:|
+| **Upstream Verification & Compliance** | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } |
+| **Core Benefits** | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } | :material-check:{ .green } |
+| **Additional Benefits** | Choose 1 | Choose 2 | Choose 4 | Choose 6 |
+| **Recognition Level** | Builder | Member | Partner | Leader |
 
 ---
 
@@ -34,62 +47,63 @@ All YES members receive these benefits regardless of tier:
 
 ### Support & Training
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| 10 support hours | :material-circle-outline: | | |
-| 25 support hours | | :material-circle-outline: | |
-| 50 support hours | | | :material-circle-outline: |
-| Virtual training (half-day) | :material-circle-outline: | | |
-| Virtual training (full-day) | | :material-circle-outline: | |
-| All virtual training workshops | | | :material-circle-outline: |
-| On-site training (1 day) | | :material-circle-outline: | |
-| On-site training/consulting (2 days) | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| 5 support hours | :material-circle-outline: | | | |
+| 10 support hours | | :material-circle-outline: | | |
+| 25 support hours | | | :material-circle-outline: | |
+| 50 support hours | | | | :material-circle-outline: |
+| Virtual training (half-day) | | :material-circle-outline: | | |
+| Virtual training (full-day) | | | :material-circle-outline: | |
+| All virtual training workshops | | | | :material-circle-outline: |
+| On-site training (1 day) | | | :material-circle-outline: | |
+| On-site training/consulting (2 days) | | | | :material-circle-outline: |
 
 ### Security & Audits
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| Quarterly security review | :material-circle-outline: | | |
-| Annual YAML stack audit | | :material-circle-outline: | |
-| Annual audit + quarterly reviews | | | :material-circle-outline: |
-| Emergency hotline access | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| Quarterly security review | | :material-circle-outline: | | |
+| Annual YAML stack audit | | | :material-circle-outline: | |
+| Annual audit + quarterly reviews | | | | :material-circle-outline: |
+| Emergency hotline access | | | | :material-circle-outline: |
 
 ### Strategic Access
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| Monthly planning participation | :material-circle-outline: | | |
-| Quarterly 1-on-1 with Ingy (virtual) | | :material-circle-outline: | |
-| Quarterly 1-on-1 with Ingy (in-person avail) | | | :material-circle-outline: |
-| Custom feature request priority | | :material-circle-outline: | |
-| Custom feature development input | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| Monthly planning participation | | :material-circle-outline: | | |
+| Quarterly 1-on-1 with Ingy (virtual) | | | :material-circle-outline: | |
+| Quarterly 1-on-1 with Ingy (in-person avail) | | | | :material-circle-outline: |
+| Custom feature request priority | | | :material-circle-outline: | |
+| Custom feature development input | | | | :material-circle-outline: |
 
 ### Events & Marketing
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| Conference booth session | :material-circle-outline: | | |
-| Conference booth sessions (2 events) | | :material-circle-outline: | |
-| Conference booth sessions (unlimited) | | | :material-circle-outline: |
-| Co-marketing opportunity | | :material-circle-outline: | :material-circle-outline: |
-| Keynote/speaking opportunity | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| Conference booth session | | :material-circle-outline: | | |
+| Conference booth sessions (2 events) | | | :material-circle-outline: | |
+| Conference booth sessions (unlimited) | | | | :material-circle-outline: |
+| Co-marketing opportunity | | | :material-circle-outline: | :material-circle-outline: |
+| Keynote/speaking opportunity | | | | :material-circle-outline: |
 
 ### Technology Access
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| Beta access to new features | :material-circle-outline: | :material-circle-outline: | |
-| YAMLScript early access | | :material-circle-outline: | |
-| YAMLScript enterprise license | | | :material-circle-outline: |
-| Contract development services (discounted) | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| Beta access to new features | :material-circle-outline: | :material-circle-outline: | :material-circle-outline: | |
+| YAMLScript early access | | | :material-circle-outline: | |
+| YAMLScript enterprise license | | | | :material-circle-outline: |
+| Contract development services (discounted) | | | | :material-circle-outline: |
 
 ### Supply Chain & Compliance
 
-| Benefit | Member | Partner | Leader |
-|---------|:------:|:-------:|:------:|
-| Maintainer attestation letter | :material-circle-outline: | | |
-| Release schedule commitment | | :material-circle-outline: | |
-| Custom compliance documentation | | | :material-circle-outline: |
+| Benefit | Builder | Member | Partner | Leader |
+|---------|:-------:|:------:|:-------:|:------:|
+| Maintainer attestation letter | | :material-circle-outline: | | |
+| Release schedule commitment | | | :material-circle-outline: | |
+| Custom compliance documentation | | | | :material-circle-outline: |
 
 :material-circle-outline: = Can be selected as one of your tier's choices
 
@@ -111,6 +125,12 @@ Pricing available upon request based on scope and requirements.
 ---
 
 ## How to Choose
+
+### Choose YES Builder if:
+- You need baseline supply chain compliance assets (SBOM, VEX, SLSA Level 3) for your build pipelines
+- You want to verify and secure the essential open-source YAML infrastructure in your stack
+- You require direct access to cryptographically signed upstream binaries
+- Standard click-wrap Terms of Service fit your procurement workflow
 
 ### Choose YES Member if:
 - YAML is important but not mission-critical in your stack
@@ -138,6 +158,7 @@ Pricing available upon request based on scope and requirements.
 
 Or learn more about each tier:
 
+- [YES Builder ($149/mo) →](builder.md)
 - [YES Member ($25K/year) →](member.md)
 - [YES Partner ($50K/year) →](partner.md)
 - [YES Leader ($100K/year) →](leader.md)

@@ -1,2 +1,134 @@
-<script data-goatcounter="https://yaml.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- Google Analytics Conditional Script & Premium GDPR Consent Banner -->
+<style>
+  #gdpr-cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 480px;
+    width: calc(100% - 40px);
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    font-size: 1.4em !important;
+  }
+  #gdpr-cookie-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #gdpr-cookie-banner p {
+    margin: 0 0 20px 0 !important;
+    font-size: 1em !important;
+    line-height: 1.6 !important;
+    color: var(--md-default-fg-color) !important;
+  }
+  #gdpr-cookie-banner a {
+    color: var(--md-primary-fg-color) !important;
+    text-decoration: underline !important;
+  }
+  .cookie-btn-group {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: flex-end !important;
+  }
+  .cookie-btn {
+    padding: 12px 26px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    font-size: 0.8em !important;
+    transition: all 0.2s ease !important;
+  }
+  #cookie-decline {
+    background: transparent;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color--light);
+  }
+  #cookie-decline:hover {
+    background: var(--md-default-bg-color--lightest);
+    color: var(--md-default-fg-color);
+  }
+  #cookie-accept {
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: white;
+  }
+  #cookie-accept:hover {
+    background: var(--md-accent-fg-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+  @media (max-width: 768px) {
+    #gdpr-cookie-banner {
+      right: 20px;
+      left: 20px;
+      width: auto;
+    }
+  }
+</style>
+
+<div id="gdpr-cookie-banner" style="font-size: 1.4em !important;">
+  <p style="font-size: 1em !important; line-height: 1.6 !important; margin: 0 0 20px 0 !important; color: var(--md-default-fg-color) !important;">
+    We use cookies to analyze site traffic and optimize your experience via Google Analytics. For more information, please read our <a href="/about/privacy/" style="color: var(--md-primary-fg-color) !important; text-decoration: underline !important;">Privacy Policy</a>.
+  </p>
+  <div class="cookie-btn-group" style="display: flex !important; gap: 12px !important; justify-content: flex-end !important;">
+    <button id="cookie-decline" class="cookie-btn" style="padding: 12px 26px !important; font-size: 0.8em !important; font-weight: 600 !important;">Decline</button>
+    <button id="cookie-accept" class="cookie-btn" style="padding: 12px 26px !important; font-size: 0.8em !important; font-weight: 600 !important;">Accept</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Replace with the official Google Analytics GA4 Measurement ID
+  var gaMeasurementId = 'G-XXXXXXXXXX'; 
+  
+  function loadGoogleAnalytics() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
+    document.head.appendChild(s);
+    
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaMeasurementId);
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (consent === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (consent !== 'declined') {
+      var banner = document.getElementById('gdpr-cookie-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        // Trigger reflow then add transition class for smooth slide-up
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            banner.classList.add('show');
+          });
+        });
+        
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
+          loadGoogleAnalytics();
+        });
+        
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+      }
+    }
+  });
+})();
+</script>
