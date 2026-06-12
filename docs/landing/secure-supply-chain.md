@@ -882,6 +882,24 @@ document.addEventListener("DOMContentLoaded", function() {
         for (const pair of formData.entries()) {
           urlSearchParams.append(pair[0], pair[1]);
         }
+
+        // Capture Organization/Company and Role/Job Title for Google Analytics
+        const company = formData.get("entry.1496989803") || "";
+        const role = formData.get("entry.2091416932") || "";
+        
+        if (typeof gtag === "function") {
+          gtag("event", "early_access_signup", {
+            "organization": company,
+            "role": role
+          });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            "event": "early_access_signup",
+            "organization": company,
+            "role": role
+          });
+        }
         
         fetch(form.action, {
           method: "POST",
