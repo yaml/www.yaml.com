@@ -62,7 +62,7 @@ hide:
     border: 1px solid rgba(245, 158, 11, 0.3);
   }
   .landing-header h1 {
-    font-size: 2.6em;
+    font-size: 2.3em;
     font-weight: 800;
     line-height: 1.25;
     margin: 0 0 15px 0;
@@ -478,6 +478,33 @@ hide:
       color: #d97706 !important;
       font-weight: bold;
       text-decoration: underline;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .landing-header {
+      padding: 35px 24px !important;
+      margin-bottom: 30px !important;
+    }
+    .landing-header h1 {
+      font-size: 1.65em !important;
+      line-height: 1.35 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      -webkit-hyphens: auto !important;
+      -ms-hyphens: auto !important;
+      hyphens: auto !important;
+    }
+    .landing-header .subtitle {
+      font-size: 1.05em !important;
+    }
+    .whitepaper-article {
+      padding: 24px 18px !important;
+    }
+    .whitepaper-article h3 {
+      font-size: 1.3em !important;
+      margin-top: 1.5em !important;
+      line-height: 1.4 !important;
     }
   }
 </style>
