@@ -506,6 +506,16 @@ hide:
       margin-top: 1.5em !important;
       line-height: 1.4 !important;
     }
+    .gantt-wrapper {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    .gantt-wrapper svg {
+      min-width: 650px !important;
+      max-width: none !important;
+      width: 650px !important;
+      height: auto !important;
+    }
   }
 </style>
 
@@ -641,7 +651,7 @@ While developer hours are a direct operational expense, financially astute manag
 
 Under the unmanaged status quo, *T* ≈ 14 days. As threat actors analyze the public vulnerability and deploy automated scanning exploits in the wild, the hazard rate *h(t)* escalates, causing the risk exposure area under the curve to grow rapidly. By reducing the remediation window to *T* < 30 minutes via YES Program automated compliance, the integration limit is compressed to near-zero, effectively neutralizing the cumulative risk before it can accumulate.
 
-<div class="infographic-wrapper">
+<div class="infographic-wrapper gantt-wrapper">
 <div class="infographic-title">14-Day CVE Crisis Remediation Timeline</div>
 ```mermaid
 ---
