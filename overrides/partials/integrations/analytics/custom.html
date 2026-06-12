@@ -1,9 +1,82 @@
-<!-- Google Analytics Conditional Script & Sleek GDPR Consent Banner -->
-<div id="gdpr-cookie-banner" style="position: fixed; bottom: 20px; right: 20px; max-width: 360px; background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lightest); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 9999; display: none;">
-  <p style="margin: 0 0 15px 0; font-size: 0.9em; line-height: 1.4; color: var(--md-default-fg-color);">We use cookies to analyze site traffic and optimize your experience via Google Analytics.</p>
-  <div style="display: flex; gap: 10px; justify-content: flex-end;">
-    <button id="cookie-decline" style="background: transparent; border: 1px solid var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light); padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85em;">Decline</button>
-    <button id="cookie-accept" style="background: var(--md-primary-fg-color); border: none; color: white; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85em;">Accept</button>
+<!-- Google Analytics Conditional Script & Premium GDPR Consent Banner -->
+<style>
+  #gdpr-cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 480px;
+    width: calc(100% - 40px);
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  }
+  #gdpr-cookie-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #gdpr-cookie-banner p {
+    margin: 0 0 20px 0;
+    font-size: 0.98em;
+    line-height: 1.5;
+    color: var(--md-default-fg-color);
+  }
+  #gdpr-cookie-banner a {
+    color: var(--md-primary-fg-color);
+    text-decoration: underline;
+  }
+  .cookie-btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+  .cookie-btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+  }
+  #cookie-decline {
+    background: transparent;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color--light);
+  }
+  #cookie-decline:hover {
+    background: var(--md-default-bg-color--lightest);
+    color: var(--md-default-fg-color);
+  }
+  #cookie-accept {
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: white;
+  }
+  #cookie-accept:hover {
+    background: var(--md-accent-fg-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+  @media (max-width: 768px) {
+    #gdpr-cookie-banner {
+      right: 20px;
+      left: 20px;
+      width: auto;
+    }
+  }
+</style>
+
+<div id="gdpr-cookie-banner">
+  <p>We use cookies to analyze site traffic and optimize your experience via Google Analytics. For more information, please read our <a href="/about/privacy/">Privacy Policy</a>.</p>
+  <div class="cookie-btn-group">
+    <button id="cookie-decline" class="cookie-btn">Decline</button>
+    <button id="cookie-accept" class="cookie-btn">Accept</button>
   </div>
 </div>
 
@@ -32,16 +105,24 @@
       var banner = document.getElementById('gdpr-cookie-banner');
       if (banner) {
         banner.style.display = 'block';
+        // Trigger reflow then add transition class for smooth slide-up
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            banner.classList.add('show');
+          });
+        });
         
         document.getElementById('cookie-accept').addEventListener('click', function() {
           localStorage.setItem('cookie_consent', 'accepted');
-          banner.style.display = 'none';
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
           loadGoogleAnalytics();
         });
         
         document.getElementById('cookie-decline').addEventListener('click', function() {
           localStorage.setItem('cookie_consent', 'declined');
-          banner.style.display = 'none';
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
         });
       }
     }
