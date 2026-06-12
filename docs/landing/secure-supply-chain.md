@@ -708,40 +708,40 @@ YAML is the invisible backbone of modern infrastructure. Stop manually documenti
 
 We will inform you as soon as hardened, SLSA Level 3-compliant binaries are available.
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSd-FA4PjqkgoJo_ZQCPhmJi_n2H0wHGqh3PnolV95GkFsI6uw/formResponse" method="POST">
 <div class="form-group">
 <label for="main-full-name">Name *</label>
-<input type="text" id="main-full-name" name="name" required placeholder="John Doe">
+<input type="text" id="main-full-name" name="entry.2021224386" required placeholder="John Doe">
 </div>
 <div class="form-group">
 <label for="main-corp-email">Corporate Email *</label>
-<input type="email" id="main-corp-email" name="email" required placeholder="john@company.com">
+<input type="email" id="main-corp-email" name="entry.523043016" required placeholder="john@company.com">
 </div>
 <div class="form-group">
 <label for="main-organization">Organization *</label>
-<input type="text" id="main-organization" name="company" required placeholder="Acme Corp">
+<input type="text" id="main-organization" name="entry.1496989803" required placeholder="Acme Corp">
 </div>
 <div class="form-group">
 <label for="main-role">Role / Job Title *</label>
-<input type="text" id="main-role" name="role" required placeholder="Infrastructure Compliance Manager">
+<input type="text" id="main-role" name="entry.2091416932" required placeholder="Infrastructure Compliance Manager">
 </div>
 <div class="checkbox-group">
 <label class="group-label">Dependency Manifest Survey *</label>
 <p style="font-size: 0.82em; margin-bottom: 12px; color: var(--md-default-fg-color--light);">Identify critical dependencies stalling your transition to an SLSA Level 3 pipeline:</p>
 <div class="checkbox-item">
-<input type="checkbox" id="main-lib-go" name="libraries[]" value="go-yaml">
+<input type="checkbox" id="main-lib-go" name="entry.1587469041" value="go-yaml (Go)">
 <label for="main-lib-go">go-yaml (Go)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="main-lib-py" name="libraries[]" value="pyyaml">
+<input type="checkbox" id="main-lib-py" name="entry.1587469041" value="pyyaml (Python)">
 <label for="main-lib-py">pyyaml (Python)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="main-lib-c" name="libraries[]" value="libyaml">
+<input type="checkbox" id="main-lib-c" name="entry.1587469041" value="libyaml (C)">
 <label for="main-lib-c">libyaml (C)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="main-lib-serde" name="libraries[]" value="yaml-serde">
+<input type="checkbox" id="main-lib-serde" name="entry.1587469041" value="yaml-serde (Rust)">
 <label for="main-lib-serde">yaml-serde (Rust)</label>
 </div>
 </div>
@@ -789,40 +789,40 @@ Download this PDF guide to share with:
 <div class="signup-card">
 <h3>Apply for Early Access</h3>
 <p>Join our early access program to secure your pipeline and automate your supply chain compliance. Registration is free, and we will contact you as soon as hardened binaries are available.</p>
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSd-FA4PjqkgoJo_ZQCPhmJi_n2H0wHGqh3PnolV95GkFsI6uw/formResponse" method="POST">
 <div class="form-group">
 <label for="full-name">Name *</label>
-<input type="text" id="full-name" name="name" required placeholder="John Doe">
+<input type="text" id="full-name" name="entry.2021224386" required placeholder="John Doe">
 </div>
 <div class="form-group">
 <label for="corp-email">Corporate Email *</label>
-<input type="email" id="corp-email" name="email" required placeholder="john@company.com">
+<input type="email" id="corp-email" name="entry.523043016" required placeholder="john@company.com">
 </div>
 <div class="form-group">
 <label for="organization">Organization *</label>
-<input type="text" id="organization" name="company" required placeholder="Acme Corp">
+<input type="text" id="organization" name="entry.1496989803" required placeholder="Acme Corp">
 </div>
 <div class="form-group">
 <label for="role">Role / Job Title *</label>
-<input type="text" id="role" name="role" required placeholder="Infrastructure Compliance Manager">
+<input type="text" id="role" name="entry.2091416932" required placeholder="Infrastructure Compliance Manager">
 </div>
 <div class="checkbox-group">
 <label class="group-label">Dependency Manifest Survey *</label>
 <p style="font-size: 0.85em; margin-bottom: 12px; color: var(--md-default-fg-color--light);">Select the YAML libraries stalling your transition to an SLSA Level 3 pipeline:</p>
 <div class="checkbox-item">
-<input type="checkbox" id="lib-go" name="libraries[]" value="go-yaml">
+<input type="checkbox" id="lib-go" name="entry.1587469041" value="go-yaml (Go)">
 <label for="lib-go">go-yaml (Go)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="lib-py" name="libraries[]" value="pyyaml">
+<input type="checkbox" id="lib-py" name="entry.1587469041" value="pyyaml (Python)">
 <label for="lib-py">pyyaml (Python)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="lib-c" name="libraries[]" value="libyaml">
+<input type="checkbox" id="lib-c" name="entry.1587469041" value="libyaml (C)">
 <label for="lib-c">libyaml (C)</label>
 </div>
 <div class="checkbox-item">
-<input type="checkbox" id="lib-serde" name="libraries[]" value="yaml-serde">
+<input type="checkbox" id="lib-serde" name="entry.1587469041" value="yaml-serde (Rust)">
 <label for="lib-serde">yaml-serde (Rust)</label>
 </div>
 </div>
@@ -862,3 +862,54 @@ Introductory pricing tier designed for individual developers and single pipeline
 </div>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const forms = document.querySelectorAll("form");
+  forms.forEach(form => {
+    if (form.action.includes("docs.google.com/forms")) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = "Submitting...";
+        btn.disabled = true;
+        
+        const formData = new FormData(form);
+        const urlSearchParams = new URLSearchParams();
+        
+        for (const pair of formData.entries()) {
+          urlSearchParams.append(pair[0], pair[1]);
+        }
+        
+        fetch(form.action, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: urlSearchParams.toString()
+        }).then(() => {
+          // Replace card content with thank you message
+          const card = form.closest(".signup-card");
+          if (card) {
+            card.innerHTML = `
+              <div style="text-align: center; padding: 20px 0;">
+                <span style="font-size: 3em; color: #f59e0b;">✓</span>
+                <h3 style="margin-top: 15px; font-weight: 700;">Application Submitted!</h3>
+                <p style="margin-top: 10px; color: var(--md-default-fg-color--light);">Thank you for applying. We will notify you at your corporate email domain as soon as the YES Program binaries are ready.</p>
+              </div>
+            `;
+          }
+        }).catch(err => {
+          console.error(err);
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert("There was an error submitting your request. Please try again.");
+        });
+      });
+    }
+  });
+});
+</script>
