@@ -1,2 +1,50 @@
-<script data-goatcounter="https://yaml.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- Google Analytics Conditional Script & Sleek GDPR Consent Banner -->
+<div id="gdpr-cookie-banner" style="position: fixed; bottom: 20px; right: 20px; max-width: 360px; background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lightest); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 9999; display: none;">
+  <p style="margin: 0 0 15px 0; font-size: 0.9em; line-height: 1.4; color: var(--md-default-fg-color);">We use cookies to analyze site traffic and optimize your experience via Google Analytics.</p>
+  <div style="display: flex; gap: 10px; justify-content: flex-end;">
+    <button id="cookie-decline" style="background: transparent; border: 1px solid var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light); padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85em;">Decline</button>
+    <button id="cookie-accept" style="background: var(--md-primary-fg-color); border: none; color: white; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85em;">Accept</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Replace with the official Google Analytics GA4 Measurement ID
+  var gaMeasurementId = 'G-XXXXXXXXXX'; 
+  
+  function loadGoogleAnalytics() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
+    document.head.appendChild(s);
+    
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaMeasurementId);
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (consent === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (consent !== 'declined') {
+      var banner = document.getElementById('gdpr-cookie-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          banner.style.display = 'none';
+          loadGoogleAnalytics();
+        });
+        
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          banner.style.display = 'none';
+        });
+      }
+    }
+  });
+})();
+</script>

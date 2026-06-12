@@ -745,7 +745,14 @@ We will inform you as soon as hardened, SLSA Level 3-compliant binaries are avai
 <label for="main-lib-serde">yaml-serde (Rust)</label>
 </div>
 </div>
-<button type="submit" class="submit-btn" style="margin-top: 15px;">Apply for Early Access</button>
+<div class="checkbox-item" style="margin-top: 15px;">
+<input type="checkbox" id="main-opt-in" name="entry.2065746098" value="Yes">
+<label for="main-opt-in">I would like to receive updates and news about YAML Enterprise Support.</label>
+</div>
+<p style="font-size: 0.78em; margin: 15px 0 15px 0; color: var(--md-default-fg-color--light); line-height: 1.4;">
+  By submitting, you agree to our processing of personal data under our <a href="../../about/privacy/" style="text-decoration: underline;">Privacy Policy</a>.
+</p>
+<button type="submit" class="submit-btn">Apply for Early Access</button>
 </form>
 </div>
 
@@ -826,6 +833,13 @@ Download this PDF guide to share with:
 <label for="lib-serde">yaml-serde (Rust)</label>
 </div>
 </div>
+<div class="checkbox-item" style="margin-top: 15px;">
+<input type="checkbox" id="sidebar-opt-in" name="entry.2065746098" value="Yes">
+<label for="sidebar-opt-in">I would like to receive updates and news about YAML Enterprise Support.</label>
+</div>
+<p style="font-size: 0.78em; margin: 15px 0 15px 0; color: var(--md-default-fg-color--light); line-height: 1.4;">
+  By submitting, you agree to our processing of personal data under our <a href="../../about/privacy/" style="text-decoration: underline;">Privacy Policy</a>.
+</p>
 <button type="submit" class="submit-btn">Apply for Early Access</button>
 </form>
 </div>
