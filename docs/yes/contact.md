@@ -66,6 +66,7 @@ Learn more about YES:
 
 - [YES Program Overview](index.md)
 - [Compare All Tiers & Benefits](benefits.md)
+- [YES Builder](builder.md)
 - [YES Member](member.md)
 - [YES Partner](partner.md)
 - [YES Leader](leader.md)
@@ -94,6 +95,7 @@ Learn more about YES:
     <label for="tier" style="display: block; margin-bottom: 5px; font-weight: 600;">Interested In</label>
     <select id="tier" name="tier" style="width: 100%; padding: 10px; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px; background: var(--md-default-bg-color); color: var(--md-default-fg-color);">
       <option value="">Select a tier...</option>
+      <option value="builder">YES Builder</option>
       <option value="member">YES Member</option>
       <option value="partner">YES Partner</option>
       <option value="leader">YES Leader</option>

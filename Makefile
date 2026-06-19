@@ -2,7 +2,7 @@ M := .cache/makes
 $(shell [ -d $M ] || git clone -q https://github.com/makeplus/makes $M)
 include $M/init.mk
 
-PYTHON-VENV-SETUP := pip install -r requirements.txt
+PYTHON-VENV-SETUP := true
 
 include $M/python.mk
 include $M/typos.mk
@@ -18,8 +18,9 @@ MAKES-CLEAN := \
   stage-site \
 
 
+PORT ?= 8000
 serve: $(PYTHON-VENV)
-	mkdocs $@
+	mkdocs serve -a 127.0.0.1:$(PORT)
 
 stage: stage-site
 	cd $< && \

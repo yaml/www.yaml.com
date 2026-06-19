@@ -171,6 +171,7 @@ extra:
 nav:
 - YES Program:
   - yes/index.md
+  - YES Builder: yes/builder.md
   - YES Member: yes/member.md
   - YES Partner: yes/partner.md
   - YES Leader: yes/leader.md
@@ -187,6 +188,7 @@ nav:
   - yq: projects/yq.md
   - libfyaml: projects/libfyaml.md
 - Services: services/index.md
+- Whitepapers: landing/secure-supply-chain.md
 # - Resources:
 #   - resources/index.md
 #   - FAQ: resources/faq.md
@@ -198,3 +200,4 @@ nav:
   - about/index.md
   - Team: about/team.md
   - Contact: about/contact.md
+  - Privacy Policy: about/privacy.md

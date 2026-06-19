@@ -10,13 +10,13 @@ The YES Member tier provides essential security, support, and influence for orga
 
 ### Core Benefits (All Members)
 
-:material-check-circle:{ .green } 48-hour early security notifications
-:material-check-circle:{ .green } Security bulletins with fix timelines
-:material-check-circle:{ .green } Help decide what YAML builds next
-:material-check-circle:{ .green } YES Member badge and logo usage rights
-:material-check-circle:{ .green } Recognition on yaml.com
-:material-check-circle:{ .green } Access to YES member forum
-:material-check-circle:{ .green } Quarterly virtual town halls
+- :material-check-circle:{ .green } 48-hour early security notifications
+- :material-check-circle:{ .green } Security bulletins with fix timelines
+- :material-check-circle:{ .green } Help decide what YAML builds next
+- :material-check-circle:{ .green } YES Member badge and logo usage rights
+- :material-check-circle:{ .green } Recognition on yaml.com
+- :material-check-circle:{ .green } Access to YES member forum
+- :material-check-circle:{ .green } Quarterly virtual town halls
 
 ### Choose 2 Additional Benefits
 

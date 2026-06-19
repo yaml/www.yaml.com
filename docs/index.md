@@ -239,10 +239,10 @@ social:
   padding: 80px 40px;
 }
 .tiers-grid {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
@@ -382,6 +382,16 @@ social:
 <div class="tiers-section">
   <h2 class="section-title">YES Program Tiers</h2>
   <div class="tiers-grid">
+    <div class="tier-card">
+      <div class="tier-name">YES Builder</div>
+      <div class="tier-features">
+        ✓ Core security benefits<br>
+        ✓ Starter support access<br>
+        ✓ Choose 1 additional benefit<br>
+        ✓ YES Builder badge
+      </div>
+      <a href="/yes/builder/" class="tier-cta">Learn More</a>
+    </div>
     <div class="tier-card">
       <div class="tier-name">YES Member</div>
       <div class="tier-features">
