@@ -86,20 +86,20 @@
 <script>
 (function() {
   // Replace with the official Google Analytics GA4 Measurement ID
-  var gaMeasurementId = 'G-XXXXXXXXXX'; 
-  
+  var gaMeasurementId = 'G-QPPPRPL56W';
+
   function loadGoogleAnalytics() {
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
     document.head.appendChild(s);
-    
+
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', gaMeasurementId);
   }
-  
+
   document.addEventListener("DOMContentLoaded", function() {
     var consent = localStorage.getItem('cookie_consent');
     if (consent === 'accepted') {
@@ -114,14 +114,14 @@
             banner.classList.add('show');
           });
         });
-        
+
         document.getElementById('cookie-accept').addEventListener('click', function() {
           localStorage.setItem('cookie_consent', 'accepted');
           banner.classList.remove('show');
           setTimeout(function() { banner.style.display = 'none'; }, 400);
           loadGoogleAnalytics();
         });
-        
+
         document.getElementById('cookie-decline').addEventListener('click', function() {
           localStorage.setItem('cookie_consent', 'declined');
           banner.classList.remove('show');
