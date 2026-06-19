@@ -1,0 +1,323 @@
+/* Custom styles for yaml.com */
+
+/* Typography System: Technical Authority */
+/* Headers use JetBrains Mono (technical, distinctive) */
+/* Body uses Newsreader (editorial, sophisticated) */
+
+h1, h2, h3, h4, h5, h6,
+.md-header__topic,
+.md-nav__title,
+.md-footer-nav__title {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Body text remains Newsreader (set in mkdocs.yml) */
+body {
+  font-feature-settings: "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Add subtle texture and depth to background */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #fafafa;
+  --md-secondary-accent: #0d7377;
+  --md-secondary-accent-light: #14a2a8;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-secondary-accent: #14a2a8;
+  --md-secondary-accent-light: #1fc7cd;
+}
+
+[data-md-color-scheme="default"] body {
+  background-image:
+    repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px
+    );
+}
+
+[data-md-color-scheme="slate"] body {
+  background-image:
+    repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px
+    );
+}
+
+/* Adjust heading weights for JetBrains Mono */
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3, h4 { font-weight: 500; }
+
+/* Secondary Accent Color System */
+/* Use teal/cyan for technical elements and contrast */
+
+/* Code blocks and inline code */
+.md-typeset code {
+  background-color: rgba(13, 115, 119, 0.1);
+  border: 1px solid rgba(13, 115, 119, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: rgba(20, 162, 168, 0.15);
+  border: 1px solid rgba(20, 162, 168, 0.3);
+}
+
+/* Links on hover for extra visual interest */
+.md-typeset a:hover {
+  color: var(--md-secondary-accent-light);
+}
+
+/* Admonition with secondary color for "note" types */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--md-secondary-accent);
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(13, 115, 119, 0.1);
+  border-color: var(--md-secondary-accent);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .note > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .note > summary {
+  background-color: rgba(20, 162, 168, 0.1);
+}
+
+/* Scroll-triggered animation visibility class */
+.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Make .green class work */
+.green {
+  color: var(--md-primary-fg-color);
+}
+
+.orange {
+  color: #ff6f00;
+}
+
+.red {
+  color: #d32f2f;
+}
+
+/* Improve card grid spacing */
+.grid.cards {
+  margin-top: 1.5em;
+}
+
+/* Better table styling */
+table {
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+table th {
+  background: var(--md-code-bg-color);
+  font-weight: 600;
+}
+
+/* Improve button styling */
+.md-button {
+  margin: 0.5em 0.5em 0.5em 0;
+}
+
+/* Force dark text color on primary buttons in both light and dark mode */
+.md-button--primary {
+  color: #5D4E00 !important;
+}
+.md-button--primary:hover,
+.md-button--primary:focus {
+  color: #5D4E00 !important;
+}
+
+/* Better code block margins */
+.highlight {
+  margin: 1.5em 0;
+}
+
+/* Improve admonition spacing */
+.admonition {
+  margin: 1.5em 0;
+}
+
+/* Landing page specific styles are inline in index.md */
+/* This keeps Material's responsive behavior intact */
+
+/* Improve navigation text contrast on amber background */
+.md-tabs__link {
+  color: rgba(0, 0, 0, 0.87) !important;
+  font-weight: 700;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Make header container constrain content like hero */
+.md-header__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Center search box vertically in nav bar */
+.md-search {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+/* Position theme toggle (dark switch) */
+.md-header__button[for="__palette_0"],
+.md-header__button[for="__palette_1"] {
+  margin-top: 0.1rem;
+}
+
+/* Position logo centered vertically, symmetric with search spacing */
+.md-header__button.md-logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: 0;
+  margin-top: 0.05rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.4rem;
+  width: 2.4rem;
+  max-height: 2.4rem;
+  display: block;
+}
+
+/* Position title next to logo */
+.md-header__title {
+  padding-left: 4.0rem;
+  margin-left: 0;
+}
+
+.md-header__topic {
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: none !important;
+}
+
+/* Keep The YAML Company visible always, hide page title */
+.md-header__topic + .md-header__topic {
+  display: none;
+}
+
+.md-header__topic:first-child {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Align navigation tabs with title */
+.md-tabs__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.md-tabs__list {
+  padding-left: 4.0rem;
+  margin-left: 6.6rem !important;
+}
+
+.md-tabs__item {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Improve header spacing on content pages */
+h2 {
+  margin-top: 2em;
+}
+
+h3 {
+  margin-top: 1.5em;
+}
+
+/* Better definition list styling */
+dl dt {
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+dl dd {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+/* Improve FAQ question styling */
+.md-typeset details.question > summary {
+  font-weight: 600;
+}
+
+/* Better spacing for social links in footer */
+.md-social {
+  gap: 0.5rem;
+}
+
+/* Improve Material icons in text */
+.md-typeset .twemoji,
+.md-typeset .lg,
+.md-typeset .middle {
+  vertical-align: middle;
+}
+
+/* Better responsiveness for landing page on mobile */
+@media screen and (max-width: 76.1875em) {
+  .md-content {
+    padding: 0;
+  }
+
+  /* Hide logo when hamburger menu appears */
+  .md-header__button.md-logo {
+    display: none;
+  }
+
+  /* Reset title padding on mobile */
+  .md-header__title {
+    padding-left: 0;
+  }
+
+  /* Reset nav tabs padding on mobile */
+  .md-tabs__list {
+    padding-left: 0;
+  }
+}
+
+/* Make tables responsive */
+@media screen and (max-width: 44.984375em) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Move header title left on very narrow screens */
+@media screen and (max-width: 440px) {
+  .md-header__topic {
+    position: relative;
+    left: -10px;
+  }
+}

@@ -1,0 +1,749 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A strategic supply chain security & compliance blueprint for Enterprise Infrastructure & Compliance Managers."><meta name=author content="Ingy döt Net"><link href=https://yaml.com/landing/secure-supply-chain/ rel=canonical><link href=../../services/ rel=prev><link href=../../about/ rel=next><link rel=alternate type=application/rss+xml title="RSS feed" href=../../feed_rss_created.xml><link rel=alternate type=application/rss+xml title="RSS feed of updated content" href=../../feed_rss_updated.xml><link rel=icon href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.7.6"><title>Securing the Foundation of Modern Infrastructure - The YAML Company</title><link rel=stylesheet href=../../assets/stylesheets/main.484c7ddc.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.ab4e12ef.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Newsreader:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Newsreader";--md-code-font:"JetBrains Mono"}</style><link rel=stylesheet href=../../assets/stylesheets/extra.css><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><style>
+  #gdpr-cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 480px;
+    width: calc(100% - 40px);
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    font-size: 1.4em !important;
+  }
+  #gdpr-cookie-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #gdpr-cookie-banner p {
+    margin: 0 0 20px 0 !important;
+    font-size: 1em !important;
+    line-height: 1.6 !important;
+    color: var(--md-default-fg-color) !important;
+  }
+  #gdpr-cookie-banner a {
+    color: var(--md-primary-fg-color) !important;
+    text-decoration: underline !important;
+  }
+  .cookie-btn-group {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: flex-end !important;
+  }
+  .cookie-btn {
+    padding: 12px 26px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    font-size: 0.8em !important;
+    transition: all 0.2s ease !important;
+  }
+  #cookie-decline {
+    background: transparent;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color--light);
+  }
+  #cookie-decline:hover {
+    background: var(--md-default-bg-color--lightest);
+    color: var(--md-default-fg-color);
+  }
+  #cookie-accept {
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: white;
+  }
+  #cookie-accept:hover {
+    background: var(--md-accent-fg-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+  @media (max-width: 768px) {
+    #gdpr-cookie-banner {
+      right: 20px;
+      left: 20px;
+      width: auto;
+    }
+  }
+</style><div id=gdpr-cookie-banner style="font-size: 1.4em !important;"><p style="font-size: 1em !important; line-height: 1.6 !important; margin: 0 0 20px 0 !important; color: var(--md-default-fg-color) !important;"> We use cookies to analyze site traffic and optimize your experience via Google Analytics. For more information, please read our <a href=/about/privacy/ style="color: var(--md-primary-fg-color) !important; text-decoration: underline !important;">Privacy Policy</a>. </p><div class=cookie-btn-group style="display: flex !important; gap: 12px !important; justify-content: flex-end !important;"><button id=cookie-decline class=cookie-btn style="padding: 12px 26px !important; font-size: 0.8em !important; font-weight: 600 !important;">Decline</button><button id=cookie-accept class=cookie-btn style="padding: 12px 26px !important; font-size: 0.8em !important; font-weight: 600 !important;">Accept</button></div></div><script>
+(function() {
+  // Replace with the official Google Analytics GA4 Measurement ID
+  var gaMeasurementId = 'G-QPPPRPL56W';
+
+  function loadGoogleAnalytics() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaMeasurementId);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (consent === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (consent !== 'declined') {
+      var banner = document.getElementById('gdpr-cookie-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        // Trigger reflow then add transition class for smooth slide-up
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            banner.classList.add('show');
+          });
+        });
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
+          loadGoogleAnalytics();
+        });
+
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          banner.classList.remove('show');
+          setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+      }
+    }
+  });
+})();
+</script><script>"undefined"!=typeof __md_analytics&&__md_analytics()</script><meta property=og:type content=website><meta property=og:title content="Securing the Foundation of Modern Infrastructure - The YAML Company"><meta property=og:description content="A strategic supply chain security & compliance blueprint for Enterprise Infrastructure & Compliance Managers."><meta property=og:image content=https://yaml.com/assets/images/social/landing/secure-supply-chain.png><meta property=og:image:type content=image/png><meta property=og:image:width content=1200><meta property=og:image:height content=630><meta property=twitter:card content=summary_large_image><meta property=twitter:title content="Securing the Foundation of Modern Infrastructure - The YAML Company"><meta property=twitter:description content="A strategic supply chain security & compliance blueprint for Enterprise Infrastructure & Compliance Managers."><meta property=twitter:image content=https://yaml.com/assets/images/social/landing/secure-supply-chain.png></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=amber data-md-color-accent=deep-orange> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#securing-the-foundation-of-modern-infrastructure class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title="The YAML Company" class="md-header__button md-logo" aria-label="The YAML Company" data-md-component=logo> <img src=../../assets/images/logo.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> The YAML Company </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Securing the Foundation of Modern Infrastructure </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=amber data-md-color-accent=deep-orange aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg> </label> <input class=md-option data-md-color-media data-md-color-scheme=slate data-md-color-primary=amber data-md-color-accent=deep-orange aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </label> <nav class=md-search__options aria-label=Search> <a href=javascript:void(0) class="md-search__icon md-icon" title=Share aria-label=Share data-clipboard data-clipboard-text data-md-component=search-share tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg> </a> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../../yes/ class=md-tabs__link> YES Program </a> </li> <li class=md-tabs__item> <a href=../../projects/ class=md-tabs__link> Projects </a> </li> <li class=md-tabs__item> <a href=../../services/ class=md-tabs__link> Services </a> </li> <li class="md-tabs__item md-tabs__item--active"> <a href=./ class=md-tabs__link> Whitepapers </a> </li> <li class=md-tabs__item> <a href=../../about/ class=md-tabs__link> About </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation hidden> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title="The YAML Company" class="md-nav__button md-logo" aria-label="The YAML Company" data-md-component=logo> <img src=../../assets/images/logo.png alt=logo> </a> The YAML Company </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_1> <div class="md-nav__link md-nav__container"> <a href=../../yes/ class="md-nav__link "> <span class=md-ellipsis> YES Program </span> </a> <label class="md-nav__link " for=__nav_1 id=__nav_1_label tabindex=0> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_1_label aria-expanded=false> <label class=md-nav__title for=__nav_1> <span class="md-nav__icon md-icon"></span> YES Program </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../yes/builder/ class=md-nav__link> <span class=md-ellipsis> YES Builder </span> </a> </li> <li class=md-nav__item> <a href=../../yes/member/ class=md-nav__link> <span class=md-ellipsis> YES Member </span> </a> </li> <li class=md-nav__item> <a href=../../yes/partner/ class=md-nav__link> <span class=md-ellipsis> YES Partner </span> </a> </li> <li class=md-nav__item> <a href=../../yes/leader/ class=md-nav__link> <span class=md-ellipsis> YES Leader </span> </a> </li> <li class=md-nav__item> <a href=../../yes/benefits/ class=md-nav__link> <span class=md-ellipsis> Compare Benefits </span> </a> </li> <li class=md-nav__item> <a href=../../yes/contact/ class=md-nav__link> <span class=md-ellipsis> Contact Us </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_2> <div class="md-nav__link md-nav__container"> <a href=../../projects/ class="md-nav__link "> <span class=md-ellipsis> Projects </span> </a> <label class="md-nav__link " for=__nav_2 id=__nav_2_label tabindex=0> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Projects </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../projects/go-yaml/ class=md-nav__link> <span class=md-ellipsis> go-yaml </span> </a> </li> <li class=md-nav__item> <a href=../../projects/pyyaml/ class=md-nav__link> <span class=md-ellipsis> pyyaml </span> </a> </li> <li class=md-nav__item> <a href=../../projects/libyaml/ class=md-nav__link> <span class=md-ellipsis> libyaml </span> </a> </li> <li class=md-nav__item> <a href=../../projects/yaml-serde/ class=md-nav__link> <span class=md-ellipsis> yaml-serde </span> </a> </li> <li class=md-nav__item> <a href=../../projects/yamlstar/ class=md-nav__link> <span class=md-ellipsis> YAMLStar </span> </a> </li> <li class=md-nav__item> <a href=../../projects/yamlscript/ class=md-nav__link> <span class=md-ellipsis> YAMLScript </span> </a> </li> <li class=md-nav__item> <a href=../../projects/yq/ class=md-nav__link> <span class=md-ellipsis> yq </span> </a> </li> <li class=md-nav__item> <a href=../../projects/libfyaml/ class=md-nav__link> <span class=md-ellipsis> libfyaml </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../services/ class=md-nav__link> <span class=md-ellipsis> Services </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> Whitepapers </span> <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Whitepapers </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#executive-summary-securing-the-foundation-of-modern-infrastructure class=md-nav__link> <span class=md-ellipsis> Executive Summary: Securing the Foundation of Modern Infrastructure </span> </a> </li> <li class=md-nav__item> <a href=#1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion class=md-nav__link> <span class=md-ellipsis> 1. The Root Cause of Supply Chain Insecurity: Resource Exhaustion </span> </a> </li> <li class=md-nav__item> <a href=#2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain class=md-nav__link> <span class=md-ellipsis> 2. The Anatomy of a CVE Crisis: The 14-Day Financial Drain </span> </a> </li> <li class=md-nav__item> <a href=#3-the-30-minute-paradigm-engineering-a-secure-future class=md-nav__link> <span class=md-ellipsis> 3. The 30-Minute Paradigm: Engineering a Secure Future </span> </a> </li> <li class=md-nav__item> <a href=#4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness class=md-nav__link> <span class=md-ellipsis> 4. Navigating the Accountability Shift: EU CRA and Compliance Readiness </span> </a> </li> <li class=md-nav__item> <a href=#conclusion-shifting-the-burden-upstream class=md-nav__link> <span class=md-ellipsis> Conclusion: Shifting the Burden Upstream </span> </a> </li> <li class=md-nav__item> <a href=#register-for-early-access class=md-nav__link> <span class=md-ellipsis> Register for Early Access </span> </a> <nav class=md-nav aria-label="Register for Early Access"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#apply-for-early-access-to-the-yes-program class=md-nav__link> <span class=md-ellipsis> Apply for Early Access to the YES Program </span> </a> </li> <li class=md-nav__item> <a href=#yes-program-builder class=md-nav__link> <span class=md-ellipsis> YES Program "Builder" </span> </a> </li> <li class=md-nav__item> <a href=#need-to-share-this-with-your-security-clearinghouse class=md-nav__link> <span class=md-ellipsis> Need to share this with your security clearinghouse? </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#apply-for-early-access class=md-nav__link> <span class=md-ellipsis> Apply for Early Access </span> </a> </li> <li class=md-nav__item> <a href=#yes-program-builder_1 class=md-nav__link> <span class=md-ellipsis> YES Program "Builder" </span> </a> </li> <li class=md-nav__item> <a href=#table-of-contents class=md-nav__link> <span class=md-ellipsis> Table of Contents </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_5> <div class="md-nav__link md-nav__container"> <a href=../../about/ class="md-nav__link "> <span class=md-ellipsis> About </span> </a> <label class="md-nav__link " for=__nav_5 id=__nav_5_label tabindex=0> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> About </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../about/team/ class=md-nav__link> <span class=md-ellipsis> Team </span> </a> </li> <li class=md-nav__item> <a href=../../about/contact/ class=md-nav__link> <span class=md-ellipsis> Contact </span> </a> </li> <li class=md-nav__item> <a href=../../about/privacy/ class=md-nav__link> <span class=md-ellipsis> Privacy Policy </span> </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc hidden> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#executive-summary-securing-the-foundation-of-modern-infrastructure class=md-nav__link> <span class=md-ellipsis> Executive Summary: Securing the Foundation of Modern Infrastructure </span> </a> </li> <li class=md-nav__item> <a href=#1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion class=md-nav__link> <span class=md-ellipsis> 1. The Root Cause of Supply Chain Insecurity: Resource Exhaustion </span> </a> </li> <li class=md-nav__item> <a href=#2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain class=md-nav__link> <span class=md-ellipsis> 2. The Anatomy of a CVE Crisis: The 14-Day Financial Drain </span> </a> </li> <li class=md-nav__item> <a href=#3-the-30-minute-paradigm-engineering-a-secure-future class=md-nav__link> <span class=md-ellipsis> 3. The 30-Minute Paradigm: Engineering a Secure Future </span> </a> </li> <li class=md-nav__item> <a href=#4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness class=md-nav__link> <span class=md-ellipsis> 4. Navigating the Accountability Shift: EU CRA and Compliance Readiness </span> </a> </li> <li class=md-nav__item> <a href=#conclusion-shifting-the-burden-upstream class=md-nav__link> <span class=md-ellipsis> Conclusion: Shifting the Burden Upstream </span> </a> </li> <li class=md-nav__item> <a href=#register-for-early-access class=md-nav__link> <span class=md-ellipsis> Register for Early Access </span> </a> <nav class=md-nav aria-label="Register for Early Access"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#apply-for-early-access-to-the-yes-program class=md-nav__link> <span class=md-ellipsis> Apply for Early Access to the YES Program </span> </a> </li> <li class=md-nav__item> <a href=#yes-program-builder class=md-nav__link> <span class=md-ellipsis> YES Program "Builder" </span> </a> </li> <li class=md-nav__item> <a href=#need-to-share-this-with-your-security-clearinghouse class=md-nav__link> <span class=md-ellipsis> Need to share this with your security clearinghouse? </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#apply-for-early-access class=md-nav__link> <span class=md-ellipsis> Apply for Early Access </span> </a> </li> <li class=md-nav__item> <a href=#yes-program-builder_1 class=md-nav__link> <span class=md-ellipsis> YES Program "Builder" </span> </a> </li> <li class=md-nav__item> <a href=#table-of-contents class=md-nav__link> <span class=md-ellipsis> Table of Contents </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Enforce full-width page layout by overriding MkDocs Material grid */
+  @media (min-width: 60em) {
+    .md-sidebar--primary, 
+    .md-sidebar--secondary {
+      display: none !important;
+    }
+    .md-content {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    .md-content__inner {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 100% !important;
+      padding: 0 15px !important;
+    }
+  }
+
+  .landing-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0px 40px 0px;
+  }
+  .landing-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 50px 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    color: #f8fafc;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.05);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .category-badge {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+  .landing-header h1 {
+    font-size: 2.3em;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 15px 0;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .landing-header .subtitle {
+    font-size: 1.2em;
+    color: #94a3b8;
+    margin: 0;
+    max-width: 900px;
+    line-height: 1.6;
+  }
+  .landing-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .landing-content-grid {
+      grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    }
+  }
+  .whitepaper-article {
+    background: var(--md-default-bg-color);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    min-width: 0;
+    overflow-x: hidden;
+  }
+  .whitepaper-article h3 {
+    font-size: 1.55em;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 8px;
+    color: var(--md-default-fg-color);
+  }
+  .whitepaper-article p {
+    font-size: 1.12em;
+    line-height: 1.55;
+    color: var(--md-default-fg-color);
+    margin-bottom: 1.6em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .whitepaper-article ul {
+    margin-bottom: 1.6em;
+  }
+  .whitepaper-article li {
+    font-size: 1.08em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: var(--md-default-fg-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .infographic-wrapper {
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .infographic-wrapper svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .infographic-title {
+    font-weight: 700;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--md-primary-fg-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sticky-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 0;
+  }
+  @media (min-width: 1024px) {
+    .sticky-sidebar {
+      position: static;
+    }
+  }
+  .signup-card, .builder-card, .toc-card {
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+  }
+  .toc-card {
+    padding: 25px;
+  }
+  @media (min-width: 1024px) {
+    .toc-card {
+      position: sticky;
+      top: 80px;
+    }
+  }
+  .toc-card h3 {
+    margin-top: 0;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--md-primary-fg-color);
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 8px;
+  }
+  .toc-list {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .toc-list li {
+    font-size: 0.85em;
+    line-height: 1.4;
+    padding-left: 12px;
+    border-left: 2px solid var(--md-default-fg-color--lightest);
+    transition: border-color 0.2s;
+  }
+  .toc-list li:hover {
+    border-left-color: var(--md-primary-fg-color);
+  }
+  .toc-list a {
+    color: var(--md-default-fg-color--light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover {
+    color: var(--md-primary-fg-color);
+  }
+  .signup-card h3, .builder-card h3 {
+    margin-top: 0;
+    font-size: 1.35em;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .signup-card p, .builder-card p {
+    font-size: 0.95em;
+    color: var(--md-default-fg-color--light);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    font-size: 0.9em !important;
+    color: var(--md-default-fg-color) !important;
+  }
+  .landing-container .form-group input[type="text"],
+  .landing-container .form-group input[type="email"],
+  .landing-container .form-group select {
+    display: block !important;
+    width: 100% !important;
+    height: 44px !important;
+    padding: 10px 14px !important;
+    border: 1.5px solid var(--md-default-fg-color--lightest) !important;
+    border-radius: 8px !important;
+    background-color: var(--md-default-bg-color) !important;
+    color: var(--md-default-fg-color) !important;
+    font-size: 0.95em !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+    box-shadow: none !important;
+  }
+  .landing-container .form-group input[type="text"]:focus,
+  .landing-container .form-group input[type="email"]:focus,
+  .landing-container .form-group select:focus {
+    border-color: var(--md-primary-fg-color) !important;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2) !important;
+    outline: none !important;
+  }
+  .checkbox-group {
+    margin-bottom: 25px;
+    background: var(--md-default-bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--md-default-fg-color--lightest);
+  }
+  .checkbox-group label.group-label {
+    display: block !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    font-size: 0.9em !important;
+    color: var(--md-default-fg-color) !important;
+  }
+  .checkbox-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+    font-size: 0.95em !important;
+  }
+  .checkbox-item:last-child {
+    margin-bottom: 0 !important;
+  }
+  /* Force native checkbox display, overriding Material resets */
+  .landing-container .checkbox-item input[type="checkbox"] {
+    -webkit-appearance: checkbox !important;
+    -moz-appearance: checkbox !important;
+    appearance: checkbox !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    accent-color: var(--md-primary-fg-color) !important;
+    flex-shrink: 0 !important;
+  }
+  .landing-container .checkbox-item label {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    color: var(--md-default-fg-color--light) !important;
+  }
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+  .builder-card {
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--md-primary-fg-color);
+  }
+  .card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.75em;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .builder-card .price {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--md-primary-fg-color);
+    margin: 10px 0;
+  }
+  .builder-card .price span {
+    font-size: 0.5em;
+    color: var(--md-default-fg-color--light);
+    font-weight: 500;
+  }
+  .builder-card ul {
+    padding-left: 20px;
+    margin: 15px 0 0 0;
+  }
+  .builder-card li {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: var(--md-default-fg-color--light);
+  }
+  .download-banner {
+    background: var(--md-code-bg-color);
+    border: 2px dashed var(--md-primary-fg-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .download-text h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+  .download-text p {
+    margin: 0 0 8px 0 !important;
+    font-size: 0.9em !important;
+    color: var(--md-default-fg-color--light);
+  }
+  .download-text ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .download-text li {
+    font-size: 0.85em;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .download-btn {
+    background: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none !important;
+    font-size: 0.9em;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .download-btn:hover {
+    opacity: 0.9;
+  }
+  .formula-container {
+    text-align: center;
+    margin: 1.5em 0;
+    font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--md-default-fg-color);
+  }
+  @media (max-width: 768px) {
+    .formula-container {
+      font-size: 0.9em;
+    }
+  }
+  .formula-container .formula-highlight {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+    font-style: italic;
+  }
+  .formula-container .formula-operator {
+    font-style: normal;
+    margin: 0 6px;
+  }
+  .formula-container sub, .formula-container sup {
+    font-size: 0.55em;
+    font-family: inherit;
+    font-style: italic;
+  }
+  .formula-container sup {
+    vertical-align: super;
+    line-height: 0;
+  }
+  .formula-container sub {
+    vertical-align: sub;
+    line-height: 0;
+  }
+  .cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+  }
+  .print-only-cta {
+    display: none !important;
+  }
+  @media print {
+    .signup-card, 
+    .builder-card, 
+    .toc-card, 
+    .sticky-sidebar, 
+    .submit-btn, 
+    .download-banner, 
+    form, 
+    .cta-grid,
+    #register-for-early-access {
+      display: none !important;
+    }
+    .print-only-cta {
+      display: block !important;
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+    .print-only-cta p {
+      margin: 0 !important;
+      font-size: 1.1em !important;
+      color: #0f172a !important;
+    }
+    .print-only-cta a {
+      color: #d97706 !important;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .landing-header {
+      padding: 35px 24px !important;
+      margin-bottom: 30px !important;
+    }
+    .landing-header h1 {
+      font-size: 1.65em !important;
+      line-height: 1.35 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      -webkit-hyphens: auto !important;
+      -ms-hyphens: auto !important;
+      hyphens: auto !important;
+    }
+    .landing-header .subtitle {
+      font-size: 1.05em !important;
+    }
+    .whitepaper-article {
+      padding: 24px 18px !important;
+    }
+    .whitepaper-article h3 {
+      font-size: 1.3em !important;
+      margin-top: 1.5em !important;
+      line-height: 1.4 !important;
+    }
+    .gantt-wrapper {
+      display: none !important;
+    }
+  }
+</style> <div class=landing-container> <div class=landing-header> <span class=category-badge>Whitepaper &amp; Executive Guide</span> <h1 id=securing-the-foundation-of-modern-infrastructure>Securing the Foundation of Modern Infrastructure<a class=headerlink href=#securing-the-foundation-of-modern-infrastructure title="Anchor link to this section">&para;</a></h1> <p class=subtitle>A Strategic supply chain security &amp; compliance blueprint for Enterprise Infrastructure &amp; Compliance Managers navigating EU CRA &amp; SLSA Level 3 requirements.</p> </div> <div class=landing-content-grid> <div class=whitepaper-article> <h3 id=executive-summary-securing-the-foundation-of-modern-infrastructure>Executive Summary: Securing the Foundation of Modern Infrastructure<a class=headerlink href=#executive-summary-securing-the-foundation-of-modern-infrastructure title="Anchor link to this section">&para;</a></h3> <p>In enterprise software infrastructure, the most vulnerable components are the ones nobody notices until a crisis hits. As the upstream maintainers of YAML, we understand the exhausting reality you face as an infrastructure and compliance manager. You are tasked with securing deeply embedded, rarely seen open-source dependencies across your entire technology stack, often battling limited financial and human resources to mitigate risks and meet strict regulatory mandates.</p> <p>It is impossible to discuss this resource exhaustion without addressing the elephant in the room: AI-generated code. Whether your organization views generative coding assistants as a triumph of engineering velocity or a liability of accumulated technical debt, one observable fact is undeniable: they create a massive amount of noise. By drastically lowering the barrier to committing code, these tools inadvertently multiply the volume of deeply embedded third-party dependencies sprawling across the enterprise stack. This rapid code expansion acts as a threat multiplier, triggering massive false-positive alert noise from standard scanners and forcing security teams to spend 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable. We know the pressure of managing these invisible, noisy layers, and the YAML Enterprise Sustainability (YES) Program is designed to actively share that burden.</p> <p>Under new regulatory mandates like the <a href=https://eur-lex.europa.eu/eli/reg/2024/2847/oj>EU Cyber Resilience Act (CRA)</a> and <a href=https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity>US Executive Order 14028</a>, organizations bear strict legal liability for the safety and continuous maintenance of all embedded open-source components. For compliance managers and engineering directors, the unmanaged status quo is no longer sustainable. When a vulnerability is disclosed, the unmanaged remediation cycle typically spans 10 to 14 days due to complex code bases and unverified build chains. At a blended developer rate, a single multi-day CVE crisis easily costs an enterprise $5,000 to $15,000 in lost engineering velocity alone. Furthermore, relying on ad-hoc CLI tools to self-generate documentation post-compilation regularly overlooks 30% to 70% of nested or manually installed packages, leaving your organization with severe, hidden compliance liabilities.</p> <p>The <strong>YAML Verified Distribution</strong> is a proactive shift from putting out fires to engineering a secure future. We are offering a premium assurance model: an assured pipeline providing cryptographically signed, <strong>SLSA Level 3-compliant binaries</strong> directly from the upstream maintainers.</p> <p>By participating in our early access program, your security clearinghouses receive:</p> <ul> <li><strong>Non-Falsifiable Provenance:</strong> Hardened binaries for the core YAML family (<code>go-yaml</code>, <code>pyyaml</code>, <code>libyaml</code>, and <code>yaml-serde</code>) built in isolated, ephemeral environments (GitHub Attestation packages).</li> <li><strong>Continuous Compliance Assets:</strong> Instantly queryable CycloneDX and SPDX SBOMs packaged alongside the binaries.</li> <li><strong>Automated Triage:</strong> Upstream-signed VEX (Vulnerability Exploitability eXchange) data to instantly neutralize false positives and eliminate manual triage guesswork.</li> </ul> <p>By shifting the cryptographic anchoring upstream directly to The YAML Company, we translate an unpredictable, 14-day engineering crisis into a programmatic, automated compliance workflow that takes under 30 minutes.</p> <p>Join the early access list today to secure your pipeline, eliminate administrative compliance bottlenecks, and officially document that your serialization layer is professionally managed by a recognized public steward.</p> <h3 id=1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion>1. The Root Cause of Supply Chain Insecurity: Resource Exhaustion<a class=headerlink href=#1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion title="Anchor link to this section">&para;</a></h3> <p>Much of the commercial security sector treats software supply chain vulnerabilities as purely technical failures that can be fixed by simply purchasing another scanning tool. I’m talking about the vendors selling turnkey applications and promising to solve all your compliance problems just saying “trust us.” As an infrastructure and compliance manager who actually operates within this industry, you likely already know the reality: supply chain insecurity is fundamentally a resource problem.</p> <p>Recent complex systems analyses evaluating software supply chain security validate this exact experience. Utilizing the <a href=https://doi.org/10.1371/journal.pone.0344098>DEMATEL (Decision-Making Trial and Evaluation Laboratory) technique</a> — a framework designed to map cause-and-effect relationships and separate root causes from downstream effects within complex systems — researchers have mapped the true drivers of software vulnerability. The empirical data is definitive: <strong>"limited financial and human resources" and "human factors" are the primary, dominant root causes driving software supply chain insecurity.</strong></p> <p>Conversely, the highly visible crises that typically trigger executive panic — such as insecure software distribution mechanisms, inadequate continuous monitoring, and the growing complexity of cyber-attacks — are mathematically proven to be downstream effects. They are simply the symptoms that manifest when an organization's engineering and compliance teams are stretched beyond their capacity.</p> <p>This distinction is critical for enterprise strategy. When tools like AI coding assistants multiply the volume of deeply embedded third-party dependencies, they rapidly drain your already limited human resources. If your organization attempts to solve this by simply adding more security scanners, you are only treating the downstream symptoms. The scanners will inevitably generate more false-positive alert noise, which further exhausts your engineers, creating a vicious, unmanageable cycle.</p> <p>This highlights the ultimate failure of modern compliance tooling. <strong>Deploying another automated verification process or passive monitoring tool without dedicated human support simply leaves you isolated when the dashboard turns red.</strong> A third-party dependency scanning proxy will happily generate a thousand false-positive alerts, but it goes completely silent when executive leadership asks, "Who is actually going to fix this?" You cannot solve a human resource exhaustion problem with an alert generator. Technical controls can only be effective in mitigating software supply chain risks when they are backed by strong governance, sustained investment, and competent human partners.</p> <p>To secure the software supply chain, organizations must neutralize the root cause by strategically offloading this human resource burden. You do not need another passive tool; you need an <strong>active governance partner</strong>.</p> <p>This is the exact operational mandate of the <strong>YAML Enterprise Sustainability (YES) Program</strong>. By subscribing to the YES program, you are partnering directly with the upstream authors who built the core libraries. We care about the integrity of your deployment because it relies on the integrity of our work. By acting as an extension of your own team, we eliminate the resource drain at the root, ensuring that you are never left alone to answer leadership when a critical vulnerability drops.</p> <div class=infographic-wrapper> <div class=infographic-title>Traditional SDLC: Find issues before release</div> <pre class=mermaid><code>flowchart LR
+    P[Plan]:::cheap --&gt; C[Code]:::cheap --&gt; B[Build]:::cheap --&gt; T["Test &amp; fix"]:::mid --&gt; R[Release]:::cheap
+    T --&gt; PV["Problem with vendor code?"]:::costly --&gt; T
+
+    classDef cheap fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    classDef mid fill:#FAEEDA,stroke:#854F0B,color:#412402
+    classDef costly fill:#FAECE7,stroke:#993C1D,color:#4A1B0C</code></pre> </div> <div class="admonition danger"> <p class=admonition-title>Cost to Fix Rises Later ⟶</p> <p>Remediation costs increase significantly in the later stages of the lifecycle (Test &amp; Release). Detecting and fixing issues earlier (shift left) is highly cost-effective.</p> </div> <div class=infographic-wrapper> <div class=infographic-title>Upstream Verified Code: Shift issues off your board</div> <pre class=mermaid><code>flowchart LR
+    subgraph vendor["Vendor's pipeline (off your board)"]
+        direction LR
+        VC["Code/Test/Fix"]:::neutral --&gt; VP["Package Verified Binaries"]:::fixed
+    end
+    subgraph yours["Your pipeline"]
+        direction LR
+        YB["Build"]:::clean --&gt; YR["Release"]:::clean
+    end
+    VP --&gt;|vetted code| YB
+
+    classDef neutral fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+    classDef found fill:#FAEEDA,stroke:#854F0B,color:#412402
+    classDef fixed fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    classDef clean fill:#EAF3DE,stroke:#3B6D11,color:#173404
+    style vendor stroke-dasharray: 5 5,stroke:#534AB7,fill:#EEEDFE
+    style yours stroke:#3B6D11,fill:#EAF3DE</code></pre> </div> <div class="admonition info"> <p class=admonition-title>⟶ Dependencies validated before your pipeline</p> <p>Using verified binaries supplied by trusted vendors reduces work and risk to your project plan.</p> </div> <h3 id=2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain>2. The Anatomy of a CVE Crisis: The 14-Day Financial Drain<a class=headerlink href=#2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain title="Anchor link to this section">&para;</a></h3> <p>When a high-severity vulnerability (CVE) is disclosed in a foundational upstream library, your compliance and security operations teams are immediately forced to answer three critical questions: Are we exposed? Where is it running? And how do we definitively prove our remediation to external auditors?</p> <p>The cybersecurity industry’s favorite buzzword for solving this is "shift left" — the mandate to catch vulnerabilities earlier in the development lifecycle. The math behind the buzzword is sound: according to the Consortium for Information &amp; Software Quality (CISQ) in <a href=https://www.it-cisq.org/wp-content/uploads/sites/6/2022/11/CPSQ-Report-Nov-22-2.pdf>The Cost of Poor Software Quality in the US: A 2022 Report</a>, addressing a vulnerability late in the deployment lifecycle costs 4x to 10x more than catching it upstream during the initial component curation phase.</p> <p>However, as an infrastructure manager, you likely know the exhausting reality of this trend. In practice, "shifting left" usually just means purchasing another passive scanning tool and shifting the administrative burden onto your internal developers. To translate this technical debt into financial ROI for your leadership team, we can apply a standard Dev Time Formula:</p> <div class=formula-container> <span class=formula-highlight>Cost per CVE Crisis</span> <span class=formula-operator>=</span> <span class=formula-operator>(</span>Hours spent tracking <span class=formula-operator>+</span> Hours spent rebuilding<span class=formula-operator>)</span> <span class=formula-operator>×</span> Blended Developer Hourly Rate </div> <p>According to industry benchmarks, an average enterprise deals with dozens of high-risk open-source vulnerability alerts per codebase annually. At a standard blended developer rate of $100 per hour, a single unmanaged CVE crisis easily costs an enterprise <strong>$5,000 to $15,000 per incident</strong> in lost engineering spend alone.</p> <p>This excessive cost is a direct result of the manual remediation timeline, which typically spans 10 to 14 business days due to the following administrative bottlenecks:</p> <ul> <li><strong>Phase 1: Sourcing and Identification (3 to 5 Days)</strong><br> Standard network or container scanners surface massive false-positive noise because micro-libraries are frequently embedded deep within dependencies or compiled statically into base images. Consequently, security teams waste 30% to 40% of their triage time manually verifying if a flagged library is actually exploitable in their specific runtime environment. Engineers are forced to manually hunt through hundreds of individual Git repositories and parse custom build scripts just to locate the vulnerable component.</li> <li><strong>Phase 2: Verifying and Rebuilding (4 to 5 Days)</strong><br> Once located, engineering teams must patch the code, rebuild the binary, and attempt to self-generate a new Software Bill of Materials (SBOM). However, relying on ad-hoc CLI tools to build provenance files post-compilation is deeply flawed; empirical research shows these tools regularly overlook 30% to 70% of nested or manually installed packages. Furthermore, a manual rebuild lacks non-falsifiable cryptographic provenance, leaving security clearinghouses unable to definitively prove that the newly compiled machine code wasn't exposed to an attack during the emergency patch cycle.</li> <li><strong>Phase 3: Legal, Compliance, and Audit Assembly (3 to 4 Days)</strong><br> Finally, compliance leads are trapped in a multi-week verification loop. They must manually document the remediation, link it to the self-generated (and often incomplete) software inventory, and wait for legal sign-off before presenting it to government auditors or enterprise clients demanding proof of safety.</li> </ul> <p>In total, an unmanaged remediation cycle for a single foundational vulnerability paralyzes your engineering pipeline for nearly two weeks. Sustainable security does not mean shifting the administrative burden left onto other internal teams; it means shifting the authoritative verification all the way left directly to the upstream maintainers. As long as your organization relies on an unverified build chain, you are accepting this 14-day administrative nightmare as a standard operating cost.</p> <p>While developer hours are a direct operational expense, financially astute managers focus on a much larger liability: <strong>Cumulative Risk Exposure (<em>R</em>)</strong>. During the patching window, the organization remains vulnerable to exploit. Actuarially, this risk is modeled as the integral of the threat probability density <em>h(t)</em> (hazard rate of exploit over time) and the potential financial loss <em>L</em> (impact of a breach) over the remediation window <em>T</em>:</p> <div class=formula-container> R(T) <span class=formula-operator>=</span> <span class=formula-operator>&int;</span><sub>0</sub><sup>T</sup> h(t) &middot; L dt </div> <p>Under the unmanaged status quo, <em>T</em> ≈ 14 days. As threat actors analyze the public vulnerability and deploy automated scanning exploits in the wild, the hazard rate <em>h(t)</em> escalates, causing the risk exposure area under the curve to grow rapidly. By reducing the remediation window to <em>T</em> &lt; 30 minutes via YES Program automated compliance, the integration limit is compressed to near-zero, effectively neutralizing the cumulative risk before it can accumulate.</p> <div class="infographic-wrapper gantt-wrapper"> <div class=infographic-title>14-Day CVE Crisis Remediation Timeline</div> <pre class=mermaid><code>---
+config:
+  theme: base
+  themeCSS: |
+    .tick text {
+      fill: #ff0000;
+      font-size: 20px;
+    }
+  useMaxWidth: true
+  themeVariables:
+    taskBkgColor: '#EAF3DE'
+    taskBorderColor: '#3B6D11'
+    taskTextColor: '#173404'
+    activeTaskBkgColor: '#FAEEDA'
+    activeTaskBorderColor: '#854F0B'
+    activeTaskTextColor: '#412402'
+    critBkgColor: '#FAECE7'
+    critBorderColor: '#993C1D'
+    critTextColor: '#4A1B0C'
+    todayMarkerColor: '#d97706'
+  gantt:
+    leftPadding: 160
+    fontSize: 20
+    sectionFontSize: 26
+    barHeight: 40
+    barGap: 10
+---
+gantt
+    dateFormat  X
+    axisFormat %s days
+    Section Phase 1
+    Sourcing &amp; Identification           :active, id1, 0, 5
+    Section Phase 2
+    Verifying &amp; Rebuilding               :crit, id2, after id1, 10
+    Section Phase 3
+    Legal, Compliance &amp; Audit            :id3, after id2, 14</code></pre> </div> <h3 id=3-the-30-minute-paradigm-engineering-a-secure-future>3. The 30-Minute Paradigm: Engineering a Secure Future<a class=headerlink href=#3-the-30-minute-paradigm-engineering-a-secure-future title="Anchor link to this section">&para;</a></h3> <p>To escape the 14-day administrative nightmare of unmanaged dependencies, organizations must fundamentally change how they verify software. The solution is not to force your internal developers to generate their own compliance documentation after a crisis hits; the solution is to adopt an automated workflow where those assets are packaged in advance by the upstream authors.</p> <p>This is the core operational advantage of the <strong>YAML Verified Distribution</strong>. By shifting the cryptographic anchoring completely off your internal boards and onto The YAML Company, we translate an unpredictable, multi-week engineering crisis into a programmatic compliance workflow that takes under 30 minutes.</p> <p>Here is how pre-packaged, machine-readable metadata transforms the remediation timeline:</p> <ul> <li><strong>Instant Exposure Pinpointing via Upstream SBOMs</strong><br> When a new CVE is announced, your Security Orchestration, Automation, and Response (SOAR) platforms no longer need to spend days manually hunting through Git repositories, parsing custom build scripts, or scanning deeply nested container images. Instead, they instantly ingest our continuous, upstream-signed CycloneDX and SPDX SBOMs. By querying your centralized software inventory against our upstream feed, your clearinghouse can locate every container, microservice, and product binary utilizing that exact SHA-256 hash in seconds, entirely bypassing the manual auditing phase.</li> <li><strong>Neutralizing Alert Fatigue via VEX Data</strong><br> Not every vulnerability natively impacts every deployment environment. For example, a flaw in a C-based parsing routine in <code>libyaml</code> might not be exploitable if an enterprise is only using it via a specific, memory-safe Rust binding wrapper in <code>yaml-serde</code>. Instead of wasting dozens of hours patching unexploitable flaws, your clearinghouse automatically ingests our upstream-signed VEX (Vulnerability Exploitability eXchange) statements. These machine-readable files explicitly declare the exploitability status of the CVE, instantly neutralizing false positives and automatically clearing alerts for products that are structurally unaffected.</li> <li><strong>Instant Audit Validation via SLSA Level 3 Attestations</strong><br> When it is time to push a patched binary to production or deliver it to a regulated client, your compliance packet is already complete. Because our binaries are built in isolated, ephemeral environments, they arrive with non-falsifiable SLSA Level 3 in-toto attestations. Your legal and security teams do not have to waste days attempting to audit the build pipeline themselves. They simply attach our upstream cryptographic signature and provenance file to their delivery manifest, programmatically proving to federal regulators or EU CRA compliance bodies that the binary was built in a tamper-proof environment directly by the software's authors.</li> </ul> <p>By substituting manual code analysis and guesswork with an upstream-verified pipeline, your security team reclaims its engineering velocity. Ultimately, this subscription allows you to trade an expensive, unpredictable two-week engineering crisis for an automated, half-hour compliance non-event.</p> <h3 id=4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness>4. Navigating the Accountability Shift: EU CRA and Compliance Readiness<a class=headerlink href=#4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness title="Anchor link to this section">&para;</a></h3> <p>The landscape of software liability is fundamentally changing. For decades, the industry operated under the unspoken assumption that open-source software was provided "as-is," with no warranty or liability. However, under incoming regulatory mandates like the EU Cyber Resilience Act (CRA), the legal paradigm has shifted. Any organization placing commercial software into the European market now bears strict legal liability for the safety, vulnerability tracking, and continuous maintenance of all embedded open-source components. A failure to comply with these due diligence requirements introduces the risk of massive regulatory fines and outright distribution bans.</p> <p>For infrastructure and compliance managers, this creates an immediate friction point. You cannot easily defend a self-generated SBOM built from a community-maintained repository. When your organization asks who is accountable for the continuous security of your core infrastructure, pointing to a GitHub issues page managed by volunteers is no longer a defensible corporate strategy.</p> <p>To be clear: subscribing to the YAML Enterprise Sustainability (YES) program does not magically absolve your organization of all regulatory liability. As recent complex systems analyses demonstrate, technical controls and supply chain security can only be effective when supported by your own strong internal governance and skillful human resources. However, the YES program systematically resolves the specific administrative and cryptographic roadblocks of proving the integrity of the YAML libraries used within your software and your build environments.</p> <p>These foundational pieces are not just helper libraries; they are the literal underpinning of modern infrastructure. The <code>go-yaml</code> library natively powers Kubernetes, Helm, Kustomize, and the entire Go ecosystem, while <code>pyyaml</code> acts as the foundation for deployment automation tools like Ansible and Salt. High-performance environments similarly rely on <code>libyaml</code> for C-based parsing and <code>yaml-serde</code> for safe systems programming in Rust. Because these libraries sit at the absolute bottom of your technology stacks powering global ecosystems, ensuring their cryptographic provenance is a first step in securing your deployment automation pipelines themselves.</p> <p>At this stage of the YES program's development, our commitment to you is straightforward: our legal guarantees are clearly defined in the simple contract you will receive as part of your membership. By purchasing the subscription, you are officially delegating the burden of continuous compliance monitoring, automated SBOM tracking, and coordinated vulnerability disclosures directly to The YAML Company. As our program scales, we intend to introduce expanded procurement warranties and indemnity limits. By becoming an early access subscriber today, your team secures a foundational partnership and will be the first to receive these advanced enterprise guarantees as they roll out.</p> <p>Ultimately, by using the YAML Verified Distribution, you can officially document that your foundational serialization layer is professionally managed by a recognized public company. This satisfies the CRA's strict mandates for supply chain due diligence out of the box, transforming a massive organizational liability into a solved administrative requirement.</p> <h3 id=conclusion-shifting-the-burden-upstream>Conclusion: Shifting the Burden Upstream<a class=headerlink href=#conclusion-shifting-the-burden-upstream title="Anchor link to this section">&para;</a></h3> <p>The security of the modern software supply chain cannot rely on exhausted infrastructure managers manually chasing downstream symptoms. True resilience requires addressing the root cause: human resource exhaustion and unverified third-party dependencies.</p> <p>The YAML Enterprise Sustainability (YES) program is our commitment to solving this foundational technical debt. We are shifting from being a passive maintenance shop to acting as your active governance partner. By subscribing to the YAML Verified Distribution, you are no longer forced to "shift left" by dumping more administrative work onto your internal developers; you are shifting the cryptographic burden completely off your board and directly onto the upstream authors.</p> <p>With the YES program, you are officially trading an unpredictable, 14-day manual patching and documentation crisis for a programmatic, 30-minute automated compliance workflow. Your security clearinghouses receive continuous, machine-readable assets—SLSA Level 3 provenance, continuous CycloneDX/SPDX SBOMs, and instant VEX triage data—ensuring that when the next major vulnerability drops, your team is already prepared, protected, and audit-ready.</p> <p>YAML is the invisible backbone of modern infrastructure. Stop manually documenting and rebuilding the core parsers in your deployments, and let the experts who built it secure it for you.</p> <h3 id=register-for-early-access>Register for Early Access<a class=headerlink href=#register-for-early-access title="Anchor link to this section">&para;</a></h3> <div class=cta-grid> <div class=signup-card> <h4 id=apply-for-early-access-to-the-yes-program>Apply for Early Access to the YES Program<a class=headerlink href=#apply-for-early-access-to-the-yes-program title="Anchor link to this section">&para;</a></h4> <p><strong>Cost:</strong> Free (Nothing)</p> <p>We will inform you as soon as hardened, SLSA Level 3-compliant binaries are available.</p> <form action=https://docs.google.com/forms/d/e/1FAIpQLSd-FA4PjqkgoJo_ZQCPhmJi_n2H0wHGqh3PnolV95GkFsI6uw/formResponse method=POST> <div class=form-group> <label for=main-full-name>Name *</label> <input type=text id=main-full-name name=entry.2021224386 required placeholder="John Doe"> </div> <div class=form-group> <label for=main-corp-email>Corporate Email *</label> <input type=email id=main-corp-email name=entry.523043016 required placeholder=john@company.com> </div> <div class=form-group> <label for=main-organization>Organization *</label> <input type=text id=main-organization name=entry.1496989803 required placeholder="Acme Corp"> </div> <div class=form-group> <label for=main-role>Role / Job Title *</label> <input type=text id=main-role name=entry.2091416932 required placeholder="Infrastructure Compliance Manager"> </div> <div class=checkbox-group> <label class=group-label>Dependency Manifest Survey *</label> <p style="font-size: 0.82em; margin-bottom: 12px; color: var(--md-default-fg-color--light);">Identify critical dependencies stalling your transition to an SLSA Level 3 pipeline:</p> <div class=checkbox-item> <input type=checkbox id=main-lib-go name=entry.1587469041 value="go-yaml (Go)"> <label for=main-lib-go>go-yaml (Go)</label> </div> <div class=checkbox-item> <input type=checkbox id=main-lib-py name=entry.1587469041 value="pyyaml (Python)"> <label for=main-lib-py>pyyaml (Python)</label> </div> <div class=checkbox-item> <input type=checkbox id=main-lib-c name=entry.1587469041 value="libyaml (C)"> <label for=main-lib-c>libyaml (C)</label> </div> <div class=checkbox-item> <input type=checkbox id=main-lib-serde name=entry.1587469041 value="yaml-serde (Rust)"> <label for=main-lib-serde>yaml-serde (Rust)</label> </div> </div> <div class=checkbox-item style="margin-top: 15px;"> <input type=checkbox id=main-opt-in name=entry.2065746098 value=Yes> <label for=main-opt-in>I would like to receive updates and news about YAML Enterprise Support.</label> </div> <p style="font-size: 0.78em; margin: 15px 0 15px 0; color: var(--md-default-fg-color--light); line-height: 1.4;"> By submitting, you agree to our processing of personal data under our <a href=../../about/privacy/ style="text-decoration: underline;">Privacy Policy</a>. </p> <button type=submit class=submit-btn>Apply for Early Access</button> </form> </div> <div class=builder-card> <p><span class=card-badge>Coming Soon</span></p> <h4 id=yes-program-builder>YES Program "Builder"<a class=headerlink href=#yes-program-builder title="Anchor link to this section">&para;</a></h4> <p><strong>Cost:</strong> $149/mo</p> <p>Access to a private repository managed by The YAML Company to download hardened binaries as soon as they are built.</p> <ul> <li><strong>Scope of Use:</strong> Covers hardened binaries and continuous SBOMs/VEX data for one commercial product line or one internal pipeline. (Upgrade required to deploy across unlimited enterprise pipelines).</li> <li><strong>Support Limits:</strong> Community or basic email support only (e.g., 5 business day response target). <em>No SLA-backed 4-hour critical incident response (reserved for the Enterprise tier).</em></li> <li><strong>No Custom Legal Procurement:</strong> No custom enterprise indemnity caps or redlined contracts. Accept the standard click-wrap Terms of Service.</li> </ul> </div> </div> <div class=print-only-cta> <p>To register for early access to the YES Program or to learn more about the YES Builder tier, please visit <strong><a href=https://www.yaml.com/yes>www.yaml.com/yes</a></strong>.</p> </div> <div class=download-banner> <div class=download-text> <h4 id=need-to-share-this-with-your-security-clearinghouse>Need to share this with your security clearinghouse?<a class=headerlink href=#need-to-share-this-with-your-security-clearinghouse title="Anchor link to this section">&para;</a></h4> <p>Download this PDF guide to share with:</p> <ul> <li><strong>Security Leadership (CISOs &amp; Directors):</strong> To align on MTTR reduction and the assured SLA.</li> <li><strong>Compliance &amp; Audit Managers:</strong> To review proof of safety for EU CRA and federal mandates.</li> <li><strong>Legal &amp; Procurement Teams:</strong> To evaluate upstream liability transfer and service-level agreements.</li> <li><strong>DevSecOps &amp; Platform Engineers:</strong> To plan SBOM integration and automated VEX triage.</li> </ul> </div> <p><a href=../yaml-secure-supply-chain.pdf class=download-btn><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg></span> Download PDF</a></p> </div> </div> <div class=sticky-sidebar> <div class=signup-card> <h3 id=apply-for-early-access>Apply for Early Access<a class=headerlink href=#apply-for-early-access title="Anchor link to this section">&para;</a></h3> <p>Join our early access program to secure your pipeline and automate your supply chain compliance. Registration is free, and we will contact you as soon as hardened binaries are available.</p> <form action=https://docs.google.com/forms/d/e/1FAIpQLSd-FA4PjqkgoJo_ZQCPhmJi_n2H0wHGqh3PnolV95GkFsI6uw/formResponse method=POST> <div class=form-group> <label for=full-name>Name *</label> <input type=text id=full-name name=entry.2021224386 required placeholder="John Doe"> </div> <div class=form-group> <label for=corp-email>Corporate Email *</label> <input type=email id=corp-email name=entry.523043016 required placeholder=john@company.com> </div> <div class=form-group> <label for=organization>Organization *</label> <input type=text id=organization name=entry.1496989803 required placeholder="Acme Corp"> </div> <div class=form-group> <label for=role>Role / Job Title *</label> <input type=text id=role name=entry.2091416932 required placeholder="Infrastructure Compliance Manager"> </div> <div class=checkbox-group> <label class=group-label>Dependency Manifest Survey *</label> <p style="font-size: 0.85em; margin-bottom: 12px; color: var(--md-default-fg-color--light);">Select the YAML libraries stalling your transition to an SLSA Level 3 pipeline:</p> <div class=checkbox-item> <input type=checkbox id=lib-go name=entry.1587469041 value="go-yaml (Go)"> <label for=lib-go>go-yaml (Go)</label> </div> <div class=checkbox-item> <input type=checkbox id=lib-py name=entry.1587469041 value="pyyaml (Python)"> <label for=lib-py>pyyaml (Python)</label> </div> <div class=checkbox-item> <input type=checkbox id=lib-c name=entry.1587469041 value="libyaml (C)"> <label for=lib-c>libyaml (C)</label> </div> <div class=checkbox-item> <input type=checkbox id=lib-serde name=entry.1587469041 value="yaml-serde (Rust)"> <label for=lib-serde>yaml-serde (Rust)</label> </div> </div> <div class=checkbox-item style="margin-top: 15px;"> <input type=checkbox id=sidebar-opt-in name=entry.2065746098 value=Yes> <label for=sidebar-opt-in>I would like to receive updates and news about YAML Enterprise Support.</label> </div> <p style="font-size: 0.78em; margin: 15px 0 15px 0; color: var(--md-default-fg-color--light); line-height: 1.4;"> By submitting, you agree to our processing of personal data under our <a href=../../about/privacy/ style="text-decoration: underline;">Privacy Policy</a>. </p> <button type=submit class=submit-btn>Apply for Early Access</button> </form> </div> <div class=builder-card> <p><span class=card-badge>Coming Soon</span></p> <h3 id=yes-program-builder_1>YES Program "Builder"<a class=headerlink href=#yes-program-builder_1 title="Anchor link to this section">&para;</a></h3> <p>Introductory pricing tier designed for individual developers and single pipeline projects.</p> <p class=price>$149<span>/mo</span></p> <ul> <li><strong>Private Repo Access:</strong> Download hardened binaries directly.</li> <li><strong>Compliance Data:</strong> Continuous SBOMs &amp; VEX metadata updates.</li> <li><strong>Scope:</strong> Covered for one commercial product line or internal pipeline.</li> <li><strong>Support:</strong> Standard community &amp; basic email support.</li> <li><strong>Agreement:</strong> Standard click-wrap Terms of Service.</li> </ul> </div> <div class=toc-card> <h3 id=table-of-contents>Table of Contents<a class=headerlink href=#table-of-contents title="Anchor link to this section">&para;</a></h3> <ul class=toc-list> <li><a href=#executive-summary-securing-the-foundation-of-modern-infrastructure>Executive Summary</a></li> <li><a href=#1-the-root-cause-of-supply-chain-insecurity-resource-exhaustion>1. The Root Cause</a></li> <li><a href=#2-the-anatomy-of-a-cve-crisis-the-14-day-financial-drain>2. The 14-Day CVE Crisis</a></li> <li><a href=#3-the-30-minute-paradigm-engineering-a-secure-future>3. The 30-Minute Paradigm</a></li> <li><a href=#4-navigating-the-accountability-shift-eu-cra-and-compliance-readiness>4. Accountability Shift (EU CRA)</a></li> <li><a href=#conclusion-shifting-the-burden-upstream>Conclusion</a></li> </ul> </div> </div> </div> </div> <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const forms = document.querySelectorAll("form");
+  forms.forEach(form => {
+    if (form.action.includes("docs.google.com/forms")) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = "Submitting...";
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+        const urlSearchParams = new URLSearchParams();
+
+        for (const pair of formData.entries()) {
+          urlSearchParams.append(pair[0], pair[1]);
+        }
+
+        // Capture Organization/Company and Role/Job Title for Google Analytics
+        const company = formData.get("entry.1496989803") || "";
+        const role = formData.get("entry.2091416932") || "";
+
+        if (typeof gtag === "function") {
+          gtag("event", "early_access_signup", {
+            "organization": company,
+            "role": role
+          });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            "event": "early_access_signup",
+            "organization": company,
+            "role": role
+          });
+        }
+
+        fetch(form.action, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: urlSearchParams.toString()
+        }).then(() => {
+          // Replace card content with thank you message
+          const card = form.closest(".signup-card");
+          if (card) {
+            card.innerHTML = `
+              <div style="text-align: center; padding: 20px 0;">
+                <span style="font-size: 3em; color: #f59e0b;">✓</span>
+                <h3 style="margin-top: 15px; font-weight: 700;">Application Submitted!</h3>
+                <p style="margin-top: 10px; color: var(--md-default-fg-color--light);">Thank you for applying. We will notify you at your corporate email domain as soon as the YES Program binaries are ready.</p>
+              </div>
+            `;
+          }
+        }).catch(err => {
+          console.error(err);
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert("There was an error submitting your request. Please try again.");
+        });
+      });
+    }
+  });
+});
+</script> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../../services/ class="md-footer__link md-footer__link--prev" aria-label="Previous: Services"> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </div> <div class=md-footer__title> <span class=md-footer__direction> Previous </span> <div class=md-ellipsis> Services </div> </div> </a> <a href=../../about/ class="md-footer__link md-footer__link--next" aria-label="Next: About The YAML Company"> <div class=md-footer__title> <span class=md-footer__direction> Next </span> <div class=md-ellipsis> About The YAML Company </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> Copyright 2020-2026 Ingy döt Net / YAML LLC </div> </div> <div class=md-social> <a href=https://github.com/yaml target=_blank rel=noopener title="YAML on GitHub" class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </a> <a href=mailto:info@yaml.com target=_blank rel=noopener title="Contact Us" class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 576 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg> </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.action.edit", "header.autohide", "content.action.view", "content.code.copy", "content.tabs.link", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=../../assets/javascripts/bundle.79ae519e.min.js></script> <script src=../../assets/javascripts/extra.js></script> </body> </html>
