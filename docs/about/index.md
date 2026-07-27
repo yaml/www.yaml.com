@@ -60,7 +60,7 @@ We maintain the YAML specification at [yaml.org](https://yaml.org) and coordinat
 
 The YAML Company has unmatched authority and expertise:
 
-- **Co-created YAML** - Founded by Ingy döt Net, co-creator of YAML
+- **Co-created YAML** - Founded by [Ingy döt Net](https://www.linkedin.com/in/ingydotnet/), co-creator of YAML
 - **Maintain core projects** - Direct control of go-yaml, pyyaml, libyaml, and yaml-serde
 - **Own key assets** - yaml.org specification, github.com/yaml organization
 - **Expert relationships** - Close collaboration with YAML ecosystem maintainers
