@@ -19,7 +19,7 @@ We are making open source sustainable for the enterprises that rely on it, witho
 To fulfill this mission, we operate across three foundational pillars:
 
 **Professional Stewardship**
-: Led by YAML’s co-creator, we take direct ownership and maintainership of the core libraries (including `libyaml`, `go-yaml`, `PyYAML`, and `yaml-serde`) that power modern cloud infrastructure.
+: Led by YAML’s co-creator, we take direct ownership and maintainership of the core libraries (including [libyaml](../projects/libyaml.md), [go-yaml](../projects/go-yaml.md), [PyYAML](../projects/pyyaml.md), and [yaml-serde](../projects/yaml-serde.md)) that power modern cloud infrastructure.
 
 **Systemic Modernization**
 : Rather than applying isolated bug fixes, we treat ecosystem debt holistically. We systematically align libraries with standard specifications, automate release engineering, and integrate robust security frameworks like SLSA compliance and automated fuzzing.
