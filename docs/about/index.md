@@ -8,11 +8,24 @@ The YAML Company is a company founded to provide professional maintenance and en
 
 ## Our Mission
 
-We make sure YAML stays secure and keeps getting better—forever.
+Our mission is to elevate YAML from an Open Source infrastructure reliant solely on volunteer maintenance into a professionally stewarded, enterprise-hardened cornerstone of global technology infrastructure. We resolve systemic technical debt across the YAML Family of libraries, enforce modern supply chain security standards, and deliver the rigorous accountability that modern compliance demands. We ensure the standard for programmable infrastructure, the one that keeps the Internet running, is secure, reliable, and sustainable for the long term. 
 
-YAML is invisible but essential infrastructure. From Kubernetes to Ansible, from CI/CD pipelines to cloud configurations, YAML touches every part of modern technology stacks. But like many critical open source projects, YAML has historically relied on volunteer maintenance.
+We are making open source sustainable for the enterprises that rely on it, without compromising the open community values that built it.
 
-**We're changing that.**
+---
+
+## Our Core Commitments
+
+To fulfill this mission, we operate across three foundational pillars:
+
+**Professional Stewardship**
+: Led by YAML’s co-creator, we take direct ownership and maintainership of the core libraries (including `libyaml`, `go-yaml`, `PyYAML`, and `yaml-serde`) that power modern cloud infrastructure.
+
+**Systemic Modernization**
+: Rather than applying isolated bug fixes, we treat ecosystem debt holistically. We systematically align libraries with standard specifications, automate release engineering, and integrate robust security frameworks like SLSA compliance and automated fuzzing.
+
+**Commercial Sustainability**
+: Through our YAML Enterprise Sustainability (YES) program, we bridge the gap between enterprise security needs and open-source longevity. We provide organizations with early vulnerability notifications and guaranteed support while generating the predictable revenue required to permanently fund core maintenance.
 
 ---
 
