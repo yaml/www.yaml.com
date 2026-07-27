@@ -33,7 +33,7 @@ To fulfill this mission, we operate across three foundational pillars:
 
 ### Professional Maintenance
 
-We provide professional, funded maintenance for critical YAML projects:
+We deliver dedicated, professional maintenance for critical YAML projects:
 
 - **[go-yaml](../projects/go-yaml.md)** - Powers Kubernetes, Helm, and Kustomize
 - **[pyyaml](../projects/pyyaml.md)** - Foundation of Ansible and Python's YAML ecosystem
