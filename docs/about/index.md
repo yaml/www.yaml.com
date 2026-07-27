@@ -2,7 +2,7 @@
 
 ## YAML supports your stack; We support YAML
 
-The YAML Company is a company founded to provide professional maintenance and enterprise support for the YAML in stacks that power modern technology.
+The YAML Company delivers professional maintenance, enterprise support, and compliance assurance for the critical YAML parsers powering global cloud infrastructure.
 
 ---
 
@@ -38,6 +38,7 @@ We provide professional, funded maintenance for critical YAML projects:
 - **[go-yaml](../projects/go-yaml.md)** - Powers Kubernetes, Helm, and Kustomize
 - **[pyyaml](../projects/pyyaml.md)** - Foundation of Ansible and Python's YAML ecosystem
 - **[libyaml](../projects/libyaml.md)** - Fast C library used by many implementations
+- **[yaml-serde](../projects/yaml-serde.md)** - Highly-performant Rust binding and serialization library
 - **[YAMLScript](../projects/yamlscript.md)** - Next-generation YAML programming language
 
 ### Enterprise Support
@@ -60,7 +61,7 @@ We maintain the YAML specification at [yaml.org](https://yaml.org) and coordinat
 The YAML Company has unmatched authority and expertise:
 
 - **Co-created YAML** - Founded by Ingy döt Net, co-creator of YAML
-- **Maintain core projects** - Direct control of go-yaml, pyyaml, libyaml
+- **Maintain core projects** - Direct control of go-yaml, pyyaml, libyaml, and yaml-serde
 - **Own key assets** - yaml.org specification, github.com/yaml organization
 - **Expert relationships** - Close collaboration with YAML ecosystem maintainers
 
@@ -71,14 +72,14 @@ The YAML Company has unmatched authority and expertise:
 **Sustainability over short-term gains**
 : We're building a sustainable model for open source infrastructure maintenance, not seeking quick returns.
 
-**Security as a fundamental right**
-: Everyone deserves secure, well-maintained infrastructure. We prioritize security in everything we do.
+**Security as an infrastructure baseline**
+: Security is not optional. We enforce modern supply chain compliance (including SLSA and SBOMs) to guarantee enterprise-grade protection for all downstream consumers.
 
 **Community and enterprise collaboration**
 : We believe enterprises and open source communities can work together for mutual benefit.
 
-**Transparent development**
-: All our code is open source. All security fixes are public. We're making open source sustainable, not privatizing it.
+**Coordinated transparency**
+: All core fixes are public and open source. To protect our enterprise partners, security vulnerabilities undergo a coordinated 48-hour advance quarantine window before being disclosed publicly.
 
 ---
 
